@@ -1,29 +1,14 @@
-# Vridhi — AI Growth & Outreach Engine
+# Vridhi — Environmental Initiative
 
-A GitHub-ready frontend prototype for the Vridhi AI Growth & Outreach Engine.
+**People. Planet. Progress.**
 
-## What is included
-- Dashboard overview with sample KPIs
-- Lead discovery workspace
-- Lead database with search and filtering
-- Campaign overview and campaign creation UI
-- Email outreach sequence preview
-- LinkedIn outreach assistant (human-operated workflow)
-- Follow-up task list
-- Opportunities pipeline
-- Analytics view
-- Responsive layout
+The environmental website for Vridhi, rooted in Udaipur, Rajasthan. This branch contains the public-facing website; it is intentionally separate from the AI growth/CRM prototype preserved on `main`.
 
-## Important prototype boundaries
-This is a frontend prototype using sample data in the browser. It does **not** yet:
-- discover or enrich real leads,
-- send emails,
-- access LinkedIn or automate LinkedIn messages,
-- connect to Gmail, Outlook, a CRM, or an AI provider,
-- persist data to a production database,
-- provide authentication or multi-tenant security.
-
-Those require backend services, provider credentials, permissions, compliance controls, and testing. Do not enter real customer or prospect data into this prototype.
+## Website direction
+- Environmental initiative focused on water, biodiversity, waste, climate, education and sustainable business.
+- Udaipur is the initial geography.
+- Evidence-led, partnership-first and transparent about what is (and is not yet) operational.
+- No fabricated project results, partners, impact metrics, contact details or donation claims.
 
 ## Run locally
 Requires Node.js 20+ and npm.
@@ -35,28 +20,19 @@ npm run dev
 
 Open http://localhost:3000
 
-## Deploy
-1. Create a GitHub repository, for example `vridhi-ai-growth-engine`.
-2. Upload the contents of this folder to the repository root.
-3. Import the repository into Vercel.
-4. Keep the framework preset as Next.js and deploy.
+## Deploy with Vercel
+1. Import `ravigurnani91-alt/vridhi_ai_growth` into Vercel.
+2. Set the Production Branch to `environmental-site`.
+3. Framework preset: Next.js; Root Directory: `./`.
+4. Deploy and verify the preview before assigning `vridhi.ink`.
+5. Configure the domain and DNS in Vercel only after checking the existing DNS records and any email-related records. Do not remove MX records.
+6. Add verified contact details and official social profiles before promoting the site.
 
-## Suggested next development milestone
-Connect authentication and a PostgreSQL database, then implement tenant isolation, user roles, audit logs, lead CRUD, and CSV import before connecting AI research or email sending.
+## Preservation / rollback
+- `main` remains unchanged and retains the earlier AI Growth & Outreach prototype.
+- `backup-before-environmental-site-2026-11-07` is a pre-change snapshot of that code.
+- `environmental-site` contains the environmental website.
+- To roll back the Vercel production branch, switch it back to `main`.
 
-## Project structure
-```text
-app/
-  globals.css
-  layout.js
-  page.js
-components/
-  AppShell.js
-  Dashboard.js
-  Leads.js
-  Campaigns.js
-  Outreach.js
-  Tasks.js
-  Pipeline.js
-  Analytics.js
-```
+## Important launch note
+The website is a first public-facing foundation, not a claim that Vridhi is already a registered NGO or that programmes are underway. Add legal identity, registration details, project pages, contact channels and impact reporting only when verified.
