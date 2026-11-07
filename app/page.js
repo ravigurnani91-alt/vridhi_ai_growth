@@ -124,9 +124,9 @@ export default function Home() {
           <h2>There is room<br/>for <em>everyone</em> in this work.</h2>
           <p>Are you an environmental researcher, community organiser, educator, responsible business or someone who cares about the future of Udaipur? We would like to hear from you.</p>
           <div className="connect-actions">
-            <a className="button button-light" href="mailto:hello@vridhi.ink?subject=Connecting%20with%20Vridhi">Start a conversation <Mail size={16}/></a>
+            <a className="button button-light" href="#about">Discover our mission <ArrowUpRight size={16}/></a>
           </div>
-          <small>We are at the beginning. We will share verified work and opportunities as they take shape.</small>
+          <small>We are at the beginning. Official contact and social channels will be added once they are ready.</small>
         </div>
       </section>
 
