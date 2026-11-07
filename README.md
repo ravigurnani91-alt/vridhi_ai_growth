@@ -1,38 +1,43 @@
-# Vridhi — Environmental Initiative
+# Vridhi — People. Planet. Progress.
 
-**People. Planet. Progress.**
+The environmental website for Vridhi, rooted in Udaipur, Rajasthan.
 
-The environmental website for Vridhi, rooted in Udaipur, Rajasthan. This branch contains the public-facing website; it is intentionally separate from the AI growth/CRM prototype preserved on `main`.
+## GitHub Pages deployment
 
-## Website direction
-- Environmental initiative focused on water, biodiversity, waste, climate, education and sustainable business.
-- Udaipur is the initial geography.
-- Evidence-led, partnership-first and transparent about what is (and is not yet) operational.
-- No fabricated project results, partners, impact metrics, contact details or donation claims.
+This site is exported as a static Next.js website and published directly by GitHub Pages. No Vercel account or external hosting platform is used.
 
-## Run locally
-Requires Node.js 20+ and npm.
+### Automatic deployment
+- Production branch: `environmental-site`
+- Workflow: `.github/workflows/deploy.yml`
+- Every push to `environmental-site` triggers a static build and GitHub Pages deployment.
+- Output directory: `out/`
+
+### Custom domain
+The site is configured for `vridhi.ink` through `public/CNAME`. In the repository, open **Settings → Pages** and confirm that the publishing source is **GitHub Actions** and the custom domain is `vridhi.ink`.
+
+At the domain registrar, configure GitHub Pages DNS records (four A records for the apex domain: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; optionally AAAA records as listed in GitHub's documentation). For `www`, use a CNAME to `ravigurnani91-alt.github.io`. Check existing DNS records first and preserve MX/email records. DNS changes are not made by this repository.
+
+### Local development
+Requires Node.js 20+.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+For a production static export:
 
-## Deploy with Vercel
-1. Import `ravigurnani91-alt/vridhi_ai_growth` into Vercel.
-2. Set the Production Branch to `environmental-site`.
-3. Framework preset: Next.js; Root Directory: `./`.
-4. Deploy and verify the preview before assigning `vridhi.ink`.
-5. Configure the domain and DNS in Vercel only after checking the existing DNS records and any email-related records. Do not remove MX records.
-6. Add verified contact details and official social profiles before promoting the site.
+```bash
+npm run build
+```
 
-## Preservation / rollback
-- `main` remains unchanged and retains the earlier AI Growth & Outreach prototype.
-- `backup-before-environmental-site-2026-11-07` is a pre-change snapshot of that code.
-- `environmental-site` contains the environmental website.
-- To roll back the Vercel production branch, switch it back to `main`.
+The generated site is in `out/`.
 
-## Important launch note
-The website is a first public-facing foundation, not a claim that Vridhi is already a registered NGO or that programmes are underway. Add legal identity, registration details, project pages, contact channels and impact reporting only when verified.
+## Preservation and rollback
+- `main` remains unchanged and contains the original AI Growth & Outreach prototype.
+- `backup-before-environmental-site-2026-11-07` is the pre-change backup branch.
+- `environmental-site` contains the environmental website and Pages workflow.
+- To restore the previous site on GitHub Pages, change the Pages deployment workflow/branch back to the prior published source. The original code remains preserved on `main`.
+
+## Publishing integrity
+This is an initial public-facing foundation, not a claim that Vridhi is already a registered NGO or that projects, partnerships, or impact metrics are operational. Add verified organisational details and project updates as they become available.
