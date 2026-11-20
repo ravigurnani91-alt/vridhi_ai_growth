@@ -150,3 +150,45 @@ document.querySelectorAll('[data-home-answer]').forEach(button => {
       : 'Not quite. Algal growth can be encouraged by excess nutrients, sunlight and suitable temperatures. Some blooms can affect water quality and aquatic life.';
   });
 });
+
+
+// News homepage: responsive nav, horizontal story sliders and daily quiz.
+document.querySelector('.mobile-menu')?.addEventListener('click', event => {
+  const nav = document.querySelector('.paper-nav');
+  const open = nav?.classList.toggle('is-open');
+  event.currentTarget.setAttribute('aria-expanded', String(Boolean(open)));
+});
+document.querySelectorAll('[data-target]').forEach(button => {
+  button.addEventListener('click', () => {
+    const slider = document.getElementById(button.dataset.target);
+    if (!slider) return;
+    slider.scrollBy({left:(button.classList.contains('paper-slider-prev') ? -1 : 1) * slider.clientWidth * .78,behavior:'smooth'});
+  });
+});
+document.querySelectorAll('[data-answer]').forEach(button => {
+  button.addEventListener('click', () => {
+    const widget = button.closest('.quiz-widget');
+    if (!widget) return;
+    widget.querySelectorAll('[data-answer]').forEach(option => {
+      option.disabled = true;
+      if (option.dataset.answer === 'right') {
+        option.style.borderColor = '#4f7558';
+        option.style.background = '#e1eadf';
+      }
+    });
+    if (button.dataset.answer !== 'right') {
+      button.style.borderColor = '#c96e4d';
+      button.style.background = '#f4e3dc';
+    }
+    const feedback = widget.querySelector('.quiz-feedback');
+    if (feedback) feedback.textContent = button.dataset.answer === 'right'
+      ? 'Correct. Excess nutrients, sunlight and suitable temperatures can trigger rapid algal growth. Some blooms can harm water quality and aquatic life.'
+      : 'Not quite. Algae can multiply rapidly when water contains excess nutrients and conditions are favourable. Some blooms can harm water quality and aquatic life.';
+  });
+});
+const dateNode = document.getElementById('today-date');
+if (dateNode) {
+  const now = new Date();
+  dateNode.textContent = new Intl.DateTimeFormat('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(now).toUpperCase();
+}
+document.querySelectorAll('#year').forEach(node => node.textContent = new Date().getFullYear());
