@@ -9,6 +9,8 @@ This branch contains the Vridhi umbrella website: a shared homepage, four divisi
 - `originals/index.html` — Vridhi-owned publishing catalogue framework
 - `experiences/index.html` — interactive quiz and local conversion tools
 - `about/index.html` — mission, editorial principles and platform boundaries
+- `404.html` — branded not-found page
+- `robots.txt` and `sitemap.xml` — basic search-engine discovery
 - `styles.css` — shared responsive editorial design
 - `script.js` — navigation, filters, quiz and local conversion interactions
 - `docs/VRIDHI_FOUNDATION.md` — business, editorial, audience and product foundation
