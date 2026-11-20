@@ -89,3 +89,29 @@ bindConverter('temperature-value', 'temperature-mode', 'temperature-output', (v,
     ? {text: ((v * 9 / 5) + 32).toLocaleString(undefined, {maximumFractionDigits: 2}) + ' °F'}
     : {text: ((v - 32) * 5 / 9).toLocaleString(undefined, {maximumFractionDigits: 2}) + ' °C'}
 );
+
+
+// Curiosity roulette: lightweight, accessible discovery prompts on the homepage.
+const surpriseIdeas = [
+  {question:'What if a forgotten village holds clues to how an entire civilisation lived?',url:'discover/'},
+  {question:'How can a lake look beautiful and still be in ecological trouble?',url:'earth/'},
+  {question:'What made ancient astronomers build instruments the size of buildings?',url:'journal/jantar-mantar-jaipur-astronomy-architecture/'},
+  {question:'Why do some cities become magnets for people, money and ideas?',url:'discover/'},
+  {question:'What happens to a community when its water source begins to disappear?',url:'earth/'},
+  {question:'Which stories about haunted places are folklore, and which have a documented history?',url:'journal/'},
+  {question:'Can one small invention change how millions of people live?',url:'discover/'}
+];
+const surpriseButton = document.getElementById('surprise-button');
+if (surpriseButton) {
+  let lastSurprise = -1;
+  surpriseButton.addEventListener('click', () => {
+    let next = Math.floor(Math.random() * surpriseIdeas.length);
+    if (surpriseIdeas.length > 1 && next === lastSurprise) next = (next + 1) % surpriseIdeas.length;
+    lastSurprise = next;
+    const idea = surpriseIdeas[next];
+    const question = document.getElementById('surprise-question');
+    const link = document.getElementById('surprise-link');
+    if (question) question.textContent = idea.question;
+    if (link) link.href = idea.url;
+  });
+}
