@@ -57,6 +57,17 @@ Initial audience groups to validate:
 
 These are hypotheses, not validated customer segments. Research actual audience behaviour and willingness to pay before prioritising.
 
+## 6A. Shared editorial formats and return-visit habits
+
+The umbrella platform can use recurring formats across divisions:
+- Daily Discovery: one concise, sourced idea or insight.
+- Vridhi Brief: a short contextual roundup with source links.
+- Today's Question: a question-led explainer or quiz.
+- Fact or Fiction: a claim checked against evidence, including nuance and uncertainty.
+- Topic collections: connected explainers that help readers continue learning.
+
+These are editorial formats, not a promise of automated daily feeds. Publish only when a responsible research and review workflow is in place. Do not pad a daily schedule with low-value or unverified material.
+
 ## 7. Content model
 1. **Free discovery:** daily questions, short explainers, briefs, facts and accessible articles.
 2. **Deeper knowledge:** researched features, case studies, long-form explainers and environmental intelligence.
@@ -84,6 +95,10 @@ Potential revenue streams to test in sequence:
 6. Institutional sales, licensing and original intellectual-property extensions.
 
 Do not forecast revenue until product-market evidence exists.
+
+**Vridhi Earth commercial direction:** keep accessible public-interest explainers and issue summaries free where practical, while testing paid business/institutional products separately. Potential ownable products include (A) an Environmental Issue Tracker with source-linked records and timelines, (B) an Environmental Opportunity Radar identifying credible demand signals in water, waste, renewable energy, monitoring and environmental technology, and (C) Environmental Intelligence Reports for businesses, industry, institutions and research organisations. Other possible revenue includes custom research, curated datasets, maps/dashboards, institutional packages, licensing, clearly labelled sponsorship and Vridhi-owned publications. Opportunity signals are not guaranteed leads; Vridhi must not imply it operates sensors or produces technical measurements unless it actually does so through documented partners or instruments.
+
+**Potential Earth customers:** businesses and industry, environmental technology/service firms, universities, researchers, institutions, NGOs, associations and CSR teams. Validate buyer needs, willingness to pay, data rights and delivery costs before building paid services. Avoid dependence on display advertising alone.
 
 ## 10. Zero-additional-investment launch principle
 Use the existing domain and free/low-cost tools. Initial development target: static website hosted through GitHub Pages, subject to confirming repository compatibility and domain configuration. Use GitHub for version control and Markdown content; use free analytics and search tools where suitable. Do not purchase software, advertising, hosting upgrades or content subscriptions during the initial validation phase.
