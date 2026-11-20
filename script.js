@@ -115,3 +115,38 @@ if (surpriseButton) {
     if (link) link.href = idea.url;
   });
 }
+
+
+// Homepage story carousel controls and progress indicator.
+const storyCarousel = document.getElementById('story-carousel');
+if (storyCarousel) {
+  const prev = document.querySelector('.slide-prev');
+  const next = document.querySelector('.slide-next');
+  const progress = document.querySelector('.carousel-progress span');
+  const updateCarouselProgress = () => {
+    const max = storyCarousel.scrollWidth - storyCarousel.clientWidth;
+    const ratio = max > 0 ? storyCarousel.scrollLeft / max : 0;
+    if (progress) progress.style.width = (20 + ratio * 80) + '%';
+  };
+  prev?.addEventListener('click', () => storyCarousel.scrollBy({left: -storyCarousel.clientWidth * .72, behavior: 'smooth'}));
+  next?.addEventListener('click', () => storyCarousel.scrollBy({left: storyCarousel.clientWidth * .72, behavior: 'smooth'}));
+  storyCarousel.addEventListener('scroll', updateCarouselProgress, {passive:true});
+  window.addEventListener('resize', updateCarouselProgress);
+  updateCarouselProgress();
+}
+
+// Homepage daily-question widget.
+document.querySelectorAll('[data-home-answer]').forEach(button => {
+  button.addEventListener('click', () => {
+    const widget = button.closest('.widget-question');
+    const feedback = widget?.querySelector('.home-answer-feedback');
+    widget?.querySelectorAll('[data-home-answer]').forEach(option => {
+      option.disabled = true;
+      if (option.dataset.homeAnswer === 'right') option.style.borderColor = '#55765e';
+    });
+    if (button.dataset.homeAnswer !== 'right') button.style.borderColor = '#c96e4d';
+    if (feedback) feedback.textContent = button.dataset.homeAnswer === 'right'
+      ? 'Correct. Excess nutrients, warmth and sunlight can encourage algae to multiply. Some blooms can affect water quality and aquatic life.'
+      : 'Not quite. Algal growth can be encouraged by excess nutrients, sunlight and suitable temperatures. Some blooms can affect water quality and aquatic life.';
+  });
+});
