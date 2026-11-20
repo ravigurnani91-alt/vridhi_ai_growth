@@ -25,3 +25,6 @@ The repository's existing `main` branch contains a Next.js AI Growth Engine prot
 
 ## Prototype limitations
 The homepage is a visual and structural foundation. The daily brief, article library, newsletter capture, search, accounts, payments, publishing workflow and content feeds are not yet connected. The sample quiz is local browser interaction only. All editorial content must be researched, sourced and reviewed before publication.
+
+## Vridhi Earth scope
+Vridhi Earth is designed as an India-wide environmental intelligence vertical covering all states and union territories, with city/district-level issue tracking where credible sources permit. Global developments are included for relevant context and solutions. Udaipur is an optional early field-study location, not the boundary of coverage. The homepage and `docs/VRIDHI_FOUNDATION.md` describe the national-first scope and the planned geographic/evidence record structure.
