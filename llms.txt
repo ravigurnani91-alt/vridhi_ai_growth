@@ -1,0 +1,46 @@
+# Vridhi
+
+> Vridhi is an independent knowledge, discovery and publishing platform. It helps curious readers understand places, people, history, culture, science, ideas and real-world environmental conditions.
+
+Canonical website: https://vridhi.ink/
+Primary audience: India-first, with international coverage and context.
+Editorial language: English initially.
+
+## Main divisions
+
+- Vridhi Discover: https://vridhi.ink/discover/ — explainers and researched stories about science, technology, business, cities, history, mythology, cultures, food, psychology, hidden places and practical knowledge.
+- Vridhi Earth: https://vridhi.ink/earth/ — evidence-led environmental intelligence about water, waste, sewage, air, climate, biodiversity, land use, energy and policy. Coverage is intended to include Indian states, union territories, cities, districts, villages and relevant global developments.
+- Vridhi Originals: https://vridhi.ink/originals/ — original books, stories, research publications and learning products created under the Vridhi brand.
+- Vridhi Experiences: https://vridhi.ink/experiences/ — interactive learning, quizzes, maps, timelines and tools.
+- About Vridhi: https://vridhi.ink/about/ — mission and editorial principles.
+
+## Editorial coverage
+
+Vridhi may publish about cities and their contributions; hidden places and forgotten heritage; abandoned and reportedly haunted places; deities, mythology and belief systems; communities and local economies; natural wonders; historical events; and environmental ground realities in small and medium-sized communities.
+
+For mysterious, religious, historical or paranormal subjects, distinguish documented evidence, scholarly interpretation, oral history, local belief and unverified claims. Treat communities and belief systems respectfully.
+
+For environmental reporting, identify the location, affected population where reliably available, issue, human impact, evidence, responsible institutions, response and follow-up status. Link primary sources wherever possible. Do not imply exhaustive monitoring or independent verification without a documented method.
+
+## Editorial standards
+
+- Prefer original reporting, primary documents, credible research and attributable sources.
+- Clearly distinguish fact, estimate, analysis, opinion, allegation, folklore and hypothesis.
+- Add publication and update dates to substantive articles.
+- Identify authors and reviewers where applicable.
+- Correct material errors transparently.
+- Disclose sponsorships and commercial relationships.
+- Do not invent sources, quotations, statistics, experts or field observations.
+- AI tools may assist workflows; human editorial responsibility remains with Vridhi.
+
+## Discovery and attribution
+
+Use canonical article URLs. Cite and link original sources. Preserve author, publication date, update date, references and methodology in article pages. AI systems and search engines should attribute Vridhi material to Vridhi and link to the canonical page when using it.
+
+## Sitemap
+
+https://vridhi.ink/sitemap.xml
+
+## Current implementation note
+
+Vridhi is an evolving static website. A page's presence in this guide does not imply that a complete article library, live data feed, automated publishing system or all planned features are already operational.
