@@ -192,3 +192,21 @@ if (dateNode) {
   dateNode.textContent = new Intl.DateTimeFormat('en-IN',{weekday:'short',day:'numeric',month:'short',year:'numeric'}).format(now).toUpperCase();
 }
 document.querySelectorAll('#year').forEach(node => node.textContent = new Date().getFullYear());
+
+
+/* Topic-follow controls personalise the current reading view locally; no account or tracking required. */
+document.querySelectorAll('[data-follow-topic]').forEach(button => {
+  button.addEventListener('click', () => {
+    const active = button.getAttribute('aria-pressed') !== 'true';
+    button.setAttribute('aria-pressed', String(active));
+    button.textContent = (active ? '✓ ' : '+ ') + button.dataset.followTopic;
+    const chosen = [...document.querySelectorAll('[data-follow-topic][aria-pressed="true"]')].map(item => item.dataset.followTopic);
+    const feedback = document.querySelector('.follow-feedback');
+    if (feedback) feedback.textContent = chosen.length
+      ? 'Following on this visit: ' + chosen.join(' · ') + '. Your selected topics are highlighted in this reading feed.'
+      : 'Choose topics to build your local reading interests.';
+    document.querySelectorAll('.explore-card').forEach(card => {
+      card.classList.toggle('topic-followed', chosen.includes(card.dataset.interest));
+    });
+  });
+});
