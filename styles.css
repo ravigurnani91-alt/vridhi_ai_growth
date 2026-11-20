@@ -267,3 +267,17 @@
 @media(max-width:900px){.explore-card-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.explore-card-grid{grid-template-columns:1fr 1fr}.explore-card img{height:120px}.reader-questions{padding:16px}.question-list{grid-template-columns:1fr}.reader-questions-head{align-items:start;flex-direction:column;gap:8px}}
 @media(max-width:390px){.explore-card-grid{grid-template-columns:1fr}.explore-card img{height:170px}}
+
+
+/* Editorial feature cards */
+.section-block{max-width:1280px;margin:0 auto;padding:56px 28px}
+.section-block .section-heading{margin-bottom:26px}
+.section-block .section-heading .eyebrow{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--orange)}
+.section-block .section-heading h2{font:500 clamp(28px,4vw,42px)/1.15 var(--serif);color:var(--ink);max-width:720px}
+.card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.story-card{display:flex;flex-direction:column;gap:12px;min-height:190px;padding:24px;border:1px solid var(--line);background:rgba(255,255,255,.42);color:var(--ink);text-decoration:none;transition:transform .2s,border-color .2s}
+.story-card:hover{transform:translateY(-3px);border-color:var(--green)}
+.story-card h3{font:500 24px/1.2 var(--serif);margin:0}
+.story-card p{font:14px/1.65 var(--sans);color:var(--muted);margin:0}
+.story-card span{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--green);margin-top:auto}
+@media(max-width:760px){.card-grid{grid-template-columns:1fr}.section-block{padding:42px 20px}}
