@@ -1,62 +1,52 @@
-# Vridhi — AI Growth & Outreach Engine
+# Vridhi — People. Planet. Progress.
 
-A GitHub-ready frontend prototype for the Vridhi AI Growth & Outreach Engine.
+The environmental website for Vridhi, rooted in Udaipur, Rajasthan.
 
-## What is included
-- Dashboard overview with sample KPIs
-- Lead discovery workspace
-- Lead database with search and filtering
-- Campaign overview and campaign creation UI
-- Email outreach sequence preview
-- LinkedIn outreach assistant (human-operated workflow)
-- Follow-up task list
-- Opportunities pipeline
-- Analytics view
-- Responsive layout
+## Hosting: GitHub Pages only
 
-## Important prototype boundaries
-This is a frontend prototype using sample data in the browser. It does **not** yet:
-- discover or enrich real leads,
-- send emails,
-- access LinkedIn or automate LinkedIn messages,
-- connect to Gmail, Outlook, a CRM, or an AI provider,
-- persist data to a production database,
-- provide authentication or multi-tenant security.
+The Next.js app is exported as a static site and deployed by GitHub Actions. No Vercel or other hosting platform is used.
 
-Those require backend services, provider credentials, permissions, compliance controls, and testing. Do not enter real customer or prospect data into this prototype.
+### GitHub Pages setup (one-time)
+1. Open repository **Settings → Pages**.
+2. Under **Build and deployment → Source**, select **GitHub Actions**.
+3. Open the **Actions** tab and check the **Deploy Vridhi to GitHub Pages** workflow. If the first run failed before Pages was enabled, re-run it after selecting GitHub Actions.
+4. The project preview URL will be `https://ravigurnani91-alt.github.io/vridhi_ai_growth/`.
 
-## Run locally
-Requires Node.js 20+ and npm.
+### Custom domain: vridhi.ink
+Do not change the domain's DNS until the existing live website has been backed up and the new GitHub Pages preview has been checked.
+
+For a custom workflow, the custom domain must be entered separately in **Settings → Pages → Custom domain**; a CNAME file in the workflow artifact does not set the domain. After adding the domain in GitHub, update the DNS provider. For an apex domain, GitHub Pages uses A records:
+- `185.199.108.153`
+- `185.199.109.153`
+- `185.199.110.153`
+- `185.199.111.153`
+
+For `www`, use a CNAME to `ravigurnani91-alt.github.io`. Check existing records first and preserve MX/email records. DNS changes are not made by this repository.
+
+The workflow currently builds for the project preview path `/vridhi_ai_growth`. When the custom domain is ready, change the workflow's `GITHUB_PAGES_BASE_PATH` value to an empty string and redeploy.
+
+## Local development
+Requires Node.js 20+.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+Production static export:
 
-## Deploy
-1. Create a GitHub repository, for example `vridhi-ai-growth-engine`.
-2. Upload the contents of this folder to the repository root.
-3. Import the repository into Vercel.
-4. Keep the framework preset as Next.js and deploy.
-
-## Suggested next development milestone
-Connect authentication and a PostgreSQL database, then implement tenant isolation, user roles, audit logs, lead CRUD, and CSV import before connecting AI research or email sending.
-
-## Project structure
-```text
-app/
-  globals.css
-  layout.js
-  page.js
-components/
-  AppShell.js
-  Dashboard.js
-  Leads.js
-  Campaigns.js
-  Outreach.js
-  Tasks.js
-  Pipeline.js
-  Analytics.js
+```bash
+npm run build
 ```
+
+Generated files are in `out/`.
+
+## Preservation / rollback
+- `main` remains unchanged and contains the earlier AI Growth & Outreach prototype.
+- `backup-before-environmental-site-2026-11-07` is a snapshot of that repository's original main branch.
+- `environmental-site` contains the environmental website and Pages workflow.
+
+**Important:** The backup branch above is a backup of the GitHub repository's original code, not yet a verified backup of the currently live `vridhi.ink` website. Do not repoint the domain until the live site's actual source/hosting has been identified and backed up.
+
+## Publishing integrity
+This is an initial public-facing foundation, not a claim that Vridhi is already a registered NGO or that projects, partnerships, or impact metrics are operational. Add verified organisational details and project updates as they become available.
