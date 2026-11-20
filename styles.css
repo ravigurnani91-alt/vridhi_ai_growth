@@ -77,3 +77,14 @@
 .site-footer a:not(.wordmark){text-decoration:underline;text-underline-offset:3px}
 @media(max-width:800px){.page-hero{grid-template-columns:1fr;padding:60px 6%;gap:25px}.page-hero-art{height:240px}.page-section{padding:60px 6%}.page-grid{grid-template-columns:1fr 1fr}.source-list,.tool-grid{grid-template-columns:1fr}.content-card{grid-template-columns:1fr;gap:8px}.page-band{padding:48px 6%}}
 @media(max-width:480px){.page-grid{grid-template-columns:1fr}.page-hero h1{font-size:48px}.content-toolbar input,.content-toolbar select{width:100%}}
+
+
+.daily-formats{background:#eeece5}
+.format-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:38px}
+.format-grid article{border-top:1px solid #bfc5b8;padding:18px 5px 8px}
+.format-grid article span{font:9px var(--mono);letter-spacing:.1em;color:var(--orange)}
+.format-grid h3{font:500 22px/1.2 var(--serif);margin:18px 0 10px}
+.format-grid p,.format-note{font-size:11px;line-height:1.8;color:var(--muted)}
+.format-note{margin-top:25px}
+@media(max-width:800px){.format-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.format-grid{grid-template-columns:1fr}}
