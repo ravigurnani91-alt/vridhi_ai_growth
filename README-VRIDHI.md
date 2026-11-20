@@ -1,12 +1,17 @@
 # Vridhi umbrella platform — first website foundation
 
-This branch contains the first static homepage concept for Vridhi.
+This branch contains the Vridhi umbrella website: a shared homepage, four division destinations and an editorial standards page. It is a static GitHub Pages site designed to work without paid hosting or a backend at the foundation stage.
 
 ## Files
-- `index.html` — homepage and division structure
-- `styles.css` — responsive editorial design
-- `script.js` — mobile navigation and sample quiz interaction
-- `docs/VRIDHI_FOUNDATION.md` — business and editorial foundation
+- `index.html` — umbrella homepage and daily editorial formats
+- `discover/index.html` — Vridhi Discover subject library and browser-side filters
+- `earth/index.html` — India-wide Vridhi Earth scope, research framework and source directory
+- `originals/index.html` — Vridhi-owned publishing catalogue framework
+- `experiences/index.html` — interactive quiz and local conversion tools
+- `about/index.html` — mission, editorial principles and platform boundaries
+- `styles.css` — shared responsive editorial design
+- `script.js` — navigation, filters, quiz and local conversion interactions
+- `docs/VRIDHI_FOUNDATION.md` — business, editorial, audience and product foundation
 
 ## Preview locally
 Open `index.html` in a browser. The visual font imports use Google Fonts; if unavailable, the site falls back to system fonts.
@@ -24,7 +29,7 @@ Do not change the custom domain DNS until the GitHub Pages preview works and the
 The repository's existing `main` branch contains a Next.js AI Growth Engine prototype. This umbrella homepage is a separate static-site experiment on its own branch. Do not merge or replace the existing `main` branch until the new site has been reviewed and the deployment plan is confirmed.
 
 ## Prototype limitations
-The homepage is a visual and structural foundation. The daily brief, article library, newsletter capture, search, accounts, payments, publishing workflow and content feeds are not yet connected. The sample quiz is local browser interaction only. All editorial content must be researched, sourced and reviewed before publication.
+The website now has a complete static umbrella structure and division landing pages. Discover subject filters, the Experiences sample quiz and unit converters run locally in the browser. The homepage's daily editorial formats are a publishing framework, not live or scheduled feeds. The Earth page links to primary research portals but does not claim live data integration, exhaustive state/district monitoring or independent sensor measurements. The Originals page presents planned product lines, not titles already for sale. Newsletter capture, article CMS, search across published articles, accounts, saved progress, payments, automated publishing, live feeds and dashboards are not yet connected. All editorial content must be researched, sourced and reviewed before publication.
 
 ## Vridhi Earth scope
 Vridhi Earth is designed as an India-wide environmental intelligence vertical covering all states and union territories, with city/district-level issue tracking where credible sources permit. Global developments are included for relevant context and solutions. Udaipur is an optional early field-study location, not the boundary of coverage. The homepage and `docs/VRIDHI_FOUNDATION.md` describe the national-first scope and the planned geographic/evidence record structure.
