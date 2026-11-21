@@ -89,7 +89,7 @@ def parse_feed(xml_bytes, source, expected_host):
             "title": title[:220],
             "url": link,
             "source": source,
-            "category": ("ENTERTAINMENT" if "Entertainment" in source or source == "Variety" else "TECH & BUSINESS" if source in ("BBC Technology", "BBC Business") else "EARTH & SCIENCE" if source in ("NASA", "Mongabay India", "Down To Earth") else "WORLD"),
+            "category": ("CELEBRITY & POP CULTURE" if "Entertainment" in source or source == "Variety" else "TECH & BUSINESS" if source in ("BBC Technology", "BBC Business") else "EARTH & SCIENCE" if source in ("NASA", "Mongabay India", "Down To Earth") else "WORLD"),
             "published": parse_date(clean(pub)),
             "summary": summary[:360],
         })
