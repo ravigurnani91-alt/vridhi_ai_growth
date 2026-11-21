@@ -28,8 +28,8 @@ FEEDS = [
 
 def clean(value):
     value = html.unescape(value or "")
-    value = re.sub(r"<script[\s\\S]*?</script>", " ", value, flags=re.I)
-    value = re.sub(r"<style[\s\\S]*?</style>", " ", value, flags=re.I)
+    value = re.sub(r"<script[\s\S]*?</script>", " ", value, flags=re.I)
+    value = re.sub(r"<style[\s\S]*?</style>", " ", value, flags=re.I)
     value = re.sub(r"<[^>]+>", " ", value)
     return re.sub(r"\s+", " ", value).strip()
 
