@@ -1,6 +1,6 @@
 (() => {
 const calculators = [
-{id:1,name:'Distance converter',desc:'Kilometres ↔ miles',fields:[['value','Distance','number',10]],run:v=>v.value*1.609344,format:(v,x)=>x.value+' '+(x.value?'km':'')+' = '+(v/1.609344).toFixed(2)+' miles',hint:'Enter kilometres to convert to miles.'},
+{id:1,name:'Distance converter',desc:'Kilometres ↔ miles',fields:[['value','Distance','number',10]],run:v=>v.value*1.609344,format:(v,x)=>x.value+' km = '+v.toFixed(2)+' miles',hint:'Enter kilometres to convert to miles.'},
 {id:2,name:'Temperature converter',desc:'Celsius ↔ Fahrenheit',fields:[['value','Temperature (°C)','number',25]],run:v=>v.value*9/5+32,format:v=>v.toFixed(1)+' °F',hint:'Convert Celsius to Fahrenheit.'},
 {id:3,name:'Percentage finder',desc:'Find a percentage of any amount',fields:[['amount','Amount','number',2500],['percent','Percentage (%)','number',18]],run:v=>v.amount*v.percent/100,format:v=>'Result: '+v.toLocaleString('en-IN',{maximumFractionDigits:2}),hint:'Useful for discounts, tax and quick comparisons.'},
 {id:4,name:'Monthly loan estimate',desc:'A simple EMI estimate',fields:[['principal','Loan amount (₹)','number',500000],['rate','Annual interest (%)','number',9],['months','Months','number',60]],run:v=>{const r=v.rate/1200;return r===0?v.principal/v.months:v.principal*r*Math.pow(1+r,v.months)/(Math.pow(1+r,v.months)-1)},format:v=>'Estimated EMI: ₹'+v.toLocaleString('en-IN',{maximumFractionDigits:0}),hint:'Illustrative estimate only; lender fees and terms vary.'},
