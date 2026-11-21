@@ -9,6 +9,7 @@ on:
       - "**/*.html"
       - "sitemap.xml"
       - "robots.txt"
+      - ".github/indexnow-trigger.txt"
   workflow_dispatch:
 
 permissions:
