@@ -22,7 +22,7 @@ MAX_TOTAL = 24
 FEEDS = [
     ("Mongabay India", "https://india.mongabay.com/feed/", "india.mongabay.com"),
     ("NASA", "https://www.nasa.gov/rss/dyn/breaking_news.rss", "nasa.gov"),
-    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", "bbc.co.uk"),
+    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", "bbc.co.uk|bbc.com"),
     ("Down To Earth", "https://www.downtoearth.org.in/rss.xml", "downtoearth.org.in"),
 ]
 
@@ -78,7 +78,7 @@ def parse_feed(xml_bytes, source, expected_host):
             continue
         parsed = urlparse(link)
         host = (parsed.hostname or "").lower()
-        if parsed.scheme != "https" or not (host == expected_host or host.endswith("." + expected_host)):
+        allowed_hosts = expected_host.split("|")\n        if parsed.scheme != "https" or not any(host == allowed or host.endswith("." + allowed) for allowed in allowed_hosts):
             continue
         rows.append({
             "title": title[:220],
