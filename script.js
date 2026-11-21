@@ -282,3 +282,42 @@ async function loadVridhiLiveSignals() {
   }
 }
 loadVridhiLiveSignals();
+
+
+// Live Vridhi Now ticker: source-linked world, entertainment, celebrity, AI and business headlines.
+async function loadVridhiBreakingTicker() {
+  const track = document.getElementById('breaking-live-track');
+  if (!track) return;
+  try {
+    const response = await fetch('/journal/briefs/live-signals.json', {cache:'no-store'});
+    if (!response.ok) throw new Error('Ticker feed unavailable');
+    const data = await response.json();
+    const items = (Array.isArray(data.items) ? data.items : []).slice(0, 18);
+    if (!items.length) return;
+    track.replaceChildren();
+    const tickerItems = [...items, ...items];
+    tickerItems.forEach((item, index) => {
+      if (index) {
+        const separator = document.createElement('b');
+        separator.textContent = '◆';
+        track.appendChild(separator);
+      }
+      const link = document.createElement('a');
+      link.className = 'breaking-item';
+      link.href = item.url;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      const category = document.createElement('strong');
+      category.textContent = item.category || 'LATEST';
+      const headline = document.createElement('span');
+      headline.textContent = item.title || 'Open latest story';
+      link.append(category, headline);
+      link.title = (item.source || 'Source') + (item.summary ? ' — ' + item.summary : '');
+      track.appendChild(link);
+    });
+    track.setAttribute('aria-label', 'Latest source-linked headlines');
+  } catch (error) {
+    // Keep the editorial fallback ticker visible if the feed is unavailable.
+  }
+}
+loadVridhiBreakingTicker();
