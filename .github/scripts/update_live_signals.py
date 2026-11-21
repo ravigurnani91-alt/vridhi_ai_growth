@@ -78,7 +78,8 @@ def parse_feed(xml_bytes, source, expected_host):
             continue
         parsed = urlparse(link)
         host = (parsed.hostname or "").lower()
-        allowed_hosts = expected_host.split("|")\n        if parsed.scheme != "https" or not any(host == allowed or host.endswith("." + allowed) for allowed in allowed_hosts):
+        allowed_hosts = expected_host.split("|")
+        if parsed.scheme != "https" or not any(host == allowed or host.endswith("." + allowed) for allowed in allowed_hosts):
             continue
         rows.append({
             "title": title[:220],
