@@ -1,6 +1,97 @@
 {
-  "updated": null,
+  "updated": "2026-11-21T12:13:45.202567+00:00",
   "editorial_note": "Publisher-provided headlines and excerpts. These are source links, not independently reported Vridhi articles.",
-  "items": [],
-  "source_errors": []
+  "items": [
+    {
+      "title": "GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history",
+      "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T22:53:24+00:00",
+      "summary": "The mammoth figure surpasses every video game launch and single-day film box office record."
+    },
+    {
+      "title": "Tech stock sell-off drags markets down as Anthropic shares slide",
+      "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T22:42:47+00:00",
+      "summary": "Pressures weighed on US markets, with the S&P 500 and the Dow Jones Industrial Average pushed into correction territory."
+    },
+    {
+      "title": "Trump threatens ban on US firms building AI data centres overseas",
+      "url": "https://www.bbc.co.uk/news/articles/cmde1lw9y54ko?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T20:54:12+00:00",
+      "summary": "The US president provided little detail on the potential policy, saying others in his team were hearing about it for the first time."
+    },
+    {
+      "title": "UK to explore even closer ties with EU after agreeing deal, says Burnham",
+      "url": "https://www.bbc.co.uk/news/articles/c6jreyqgw4e9o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T17:49:48+00:00",
+      "summary": "The UK-EU deal agreed on Friday covers British food exports, emissions trading and a youth experience scheme."
+    },
+    {
+      "title": "Faisal Islam: This cost-cutting UK-EU deal doesn't mean lower prices will follow",
+      "url": "https://www.bbc.co.uk/news/articles/cm1wr029evnqo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T16:41:52+00:00",
+      "summary": "The trade deal is unlikely lower food prices for shoppers, but should boost the economy more than other post-Brexit agreements."
+    },
+    {
+      "title": "Tinned food and long-life milk boost retail sales after 'Be Ready' campaign launch",
+      "url": "https://www.bbc.co.uk/news/articles/ck053mzy2qqeo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T09:44:56+00:00",
+      "summary": "People stocking up on long-life food drove retail sales higher October, according to official data."
+    },
+    {
+      "title": "Should AI be judging our credit worthiness?",
+      "url": "https://www.bbc.co.uk/news/articles/c6d94pzk9vleo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T07:32:19+00:00",
+      "summary": "Would AI be a good judge of whether you should get a mortgage, car loan or mobile phone contract?"
+    },
+    {
+      "title": "Fish and eggs al desko? The dos and don'ts of lunch at work",
+      "url": "https://www.bbc.co.uk/news/articles/cwp8g4092zglo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "TECH & BUSINESS",
+      "published": "2026-11-20T00:08:37+00:00",
+      "summary": "Eating at your desk? The dos and don'ts of lunch at work"
+    },
+    {
+      "title": "Trump's wealth claims face another fact-check: what the financial figures actually show",
+      "url": "https://www.factcheck.org/2026/11/factchecking-trumps-post-election-60-minutes-interview/",
+      "source": "FactCheck.org · November 2026",
+      "category": "POLITICS & MONEY",
+      "published": "2026-11-14T00:00:00+00:00",
+      "summary": "A fact-check examined statements about Trump's reported wealth and business income. This is a review of claims, not a claim that he is poor."
+    },
+    {
+      "title": "Samsung India: 80–100 executives reportedly asked to leave in TV and home-appliance units",
+      "url": "https://economictimes.indiatimes.com/industry/cons-products/electronics/samsung-india-pays-the-price-of-costlier-chips-with-a-round-of-layoffs/articleshow/133894023.cms",
+      "source": "The Economic Times · 8 Sep 2026",
+      "category": "WORK & MONEY",
+      "published": "2026-09-08T03:06:00+00:00",
+      "summary": "The report cited industry executives and described cuts in Samsung India's television and home-appliance businesses. It did not report a company-wide global layoff figure."
+    },
+    {
+      "title": "AI job apocalypse? WEF projects 92 million jobs displaced—and 170 million created—by 2030 across major labour-market shifts",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+      "source": "World Economic Forum · 2025 forecast",
+      "category": "AI & THE FUTURE",
+      "published": "2025-01-07T00:00:00+00:00",
+      "summary": "The estimate covers several structural trends, not AI alone. The WEF projects a net increase of 78 million jobs by 2030."
+    }
+  ],
+  "source_errors": [
+    "Down To Earth: HTTPError: HTTP Error 404: Not Found"
+  ]
 }
