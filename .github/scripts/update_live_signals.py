@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Refresh Vridhi's sourced live-signals feed from a fixed publisher allowlist.
+"""Refresh Vridhi's live headlines from a small, explicit publisher allowlist.
 
-This script republishes publisher-provided headlines/excerpts with attribution.
-It does not invent stories, write original articles, or turn headlines into claims.
+Only publisher-provided headlines, links and short excerpts are shown. This
+script does not invent stories or present feed items as original Vridhi reporting.
 """
 import email.utils
 import html
@@ -11,23 +11,23 @@ import re
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "journal" / "briefs" / "live-signals.json"
-MAX_PER_SOURCE = 8
-MAX_TOTAL = 32
+MAX_PER_SOURCE = 10
+MAX_TOTAL = 40
+MAX_AGE_DAYS = 21
 FEEDS = [
-    ("Mongabay India", "https://india.mongabay.com/feed/", "india.mongabay.com"),
-    ("NASA", "https://www.nasa.gov/rss/dyn/breaking_news.rss", "nasa.gov"),
-    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", "bbc.co.uk|bbc.com"),
-    ("BBC Entertainment & Arts", "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml", "bbc.co.uk|bbc.com"),
-    ("Variety", "https://variety.com/feed/", "variety.com"),
-    ("BBC Technology", "https://feeds.bbci.co.uk/news/technology/rss.xml", "bbc.co.uk|bbc.com"),
-    ("BBC Business", "https://feeds.bbci.co.uk/news/business/rss.xml", "bbc.co.uk|bbc.com"),
-    ("Down To Earth", "https://www.downtoearth.org.in/rss.xml", "downtoearth.org.in"),
+    ("Mongabay India", "https://india.mongabay.com/feed/", ["india.mongabay.com"], "EARTH & DISCOVERY"),
+    ("NASA", "https://www.nasa.gov/rss/dyn/breaking_news.rss", ["nasa.gov"], "SCIENCE & SPACE"),
+    ("BBC World", "https://feeds.bbci.co.uk/news/world/rss.xml", ["bbc.co.uk", "bbc.com"], "WORLD"),
+    ("BBC Entertainment & Arts", "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml", ["bbc.co.uk", "bbc.com"], "ENTERTAINMENT"),
+    ("Variety", "https://variety.com/feed/", ["variety.com"], "ENTERTAINMENT"),
+    ("BBC Technology", "https://feeds.bbci.co.uk/news/technology/rss.xml", ["bbc.co.uk", "bbc.com"], "TECH & AI"),
+    ("BBC Business", "https://feeds.bbci.co.uk/news/business/rss.xml", ["bbc.co.uk", "bbc.com"], "BUSINESS"),
 ]
 
 def clean(value):
@@ -37,60 +37,73 @@ def clean(value):
     value = re.sub(r"<[^>]+>", " ", value)
     return re.sub(r"\s+", " ", value).strip()
 
+def tag_name(element):
+    return element.tag.rsplit("}", 1)[-1].lower()
+
+def find_child(node, names):
+    for child in list(node):
+        if tag_name(child) in names:
+            return child
+    return None
+
+def child_value(node, names):
+    child = find_child(node, names)
+    if child is None:
+        return ""
+    if child.text and child.text.strip():
+        return child.text.strip()
+    return "".join(child.itertext()).strip()
+
+def item_link(node):
+    child = find_child(node, {"link"})
+    if child is None:
+        return ""
+    # RSS uses link text; Atom uses href (often with no text node).
+    return (child.attrib.get("href") or child.text or "").strip()
+
 def parse_date(value):
     if not value:
         return None
     try:
         dt = email.utils.parsedate_to_datetime(value)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc).isoformat()
-    except Exception:
+    except (TypeError, ValueError, OverflowError):
         try:
-            return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc).isoformat()
-        except Exception:
+            dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except (TypeError, ValueError):
             return None
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=timezone.utc)
+    return dt.astimezone(timezone.utc)
 
-def local_name(tag):
-    return tag.rsplit("}", 1)[-1].lower()
-
-def child_text(node, names):
-    for child in list(node):
-        if local_name(child.tag) in names:
-            if child.text:
-                return child.text
-            # Atom content can contain nested XHTML.
-            return ET.tostring(child, encoding="unicode", method="xml")
-    return ""
-
-def parse_feed(xml_bytes, source, expected_host):
+def parse_feed(xml_bytes, source, allowed_hosts, category):
     root = ET.fromstring(xml_bytes)
-    entries = [n for n in root.iter() if local_name(n.tag) in ("item", "entry")]
+    entries = [node for node in root.iter() if tag_name(node) in {"item", "entry"}]
     rows = []
-    for entry in entries[:MAX_PER_SOURCE * 3]:
-        title = clean(child_text(entry, {"title"}))
-        link = child_text(entry, {"link"}).strip()
-        if not link:
-            for child in list(entry):
-                if local_name(child.tag) == "link":
-                    link = child.attrib.get("href", "")
-                    if link:
-                        break
-        summary = clean(child_text(entry, {"description", "summary", "content", "encoded"}))
-        pub = child_text(entry, {"pubdate", "published", "updated", "date"})
+    cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
+
+    for entry in entries:
+        title = clean(child_value(entry, {"title"}))
+        link = item_link(entry)
+        summary = clean(child_value(entry, {"description", "summary", "encoded", "content"}))
+        date_text = child_value(entry, {"pubdate", "published", "updated", "date"})
+        published = parse_date(clean(date_text))
+
         if not title or not link:
             continue
         parsed = urlparse(link)
         host = (parsed.hostname or "").lower()
-        allowed_hosts = expected_host.split("|")
         if parsed.scheme != "https" or not any(host == allowed or host.endswith("." + allowed) for allowed in allowed_hosts):
             continue
+        # Keep the live strip fresh; undated entries are retained but sorted last.
+        if published and published < cutoff:
+            continue
+
         rows.append({
             "title": title[:220],
             "url": link,
             "source": source,
-            "category": ("CELEBRITY & POP CULTURE" if "Entertainment" in source or source == "Variety" else "TECH & BUSINESS" if source in ("BBC Technology", "BBC Business") else "EARTH & SCIENCE" if source in ("NASA", "Mongabay India", "Down To Earth") else "WORLD"),
-            "published": parse_date(clean(pub)),
+            "category": category,
+            "published": published.isoformat() if published else None,
             "summary": summary[:360],
         })
         if len(rows) >= MAX_PER_SOURCE:
@@ -99,63 +112,42 @@ def parse_feed(xml_bytes, source, expected_host):
 
 all_items = []
 errors = []
-for source, feed_url, expected_host in FEEDS:
+for source, feed_url, allowed_hosts, category in FEEDS:
     try:
-        request = urllib.request.Request(feed_url, headers={"User-Agent": "VridhiEditorialFeed/1.0 (+https://vridhi.ink/about/)", "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml"})
+        request = urllib.request.Request(
+            feed_url,
+            headers={
+                "User-Agent": "VridhiEditorialFeed/1.1 (+https://vridhi.ink/about/)",
+                "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml",
+            },
+        )
         with urllib.request.urlopen(request, timeout=25) as response:
-            items = parse_feed(response.read(), source, expected_host)
-        all_items.extend(items)
-        print(f"{source}: {len(items)} items")
+            rows = parse_feed(response.read(), source, allowed_hosts, category)
+        all_items.extend(rows)
+        print(f"{source}: {len(rows)} fresh items")
     except Exception as exc:
-        errors.append(f"{source}: {type(exc).__name__}: {exc}")
-        print(errors[-1], file=sys.stderr)
+        message = f"{source}: {type(exc).__name__}: {exc}"
+        errors.append(message)
+        print(message, file=sys.stderr)
 
-# Curated, source-linked explainers give the ticker a sharper editorial voice.
-# Keep reported numbers scoped to the source, date and population.
-curated = [
-    {
-        "title": "Samsung India: 80–100 executives reportedly asked to leave in TV and home-appliance units",
-        "url": "https://economictimes.indiatimes.com/industry/cons-products/electronics/samsung-india-pays-the-price-of-costlier-chips-with-a-round-of-layoffs/articleshow/133894023.cms",
-        "source": "The Economic Times · 8 Sep 2026",
-        "category": "WORK & MONEY",
-        "published": "2026-09-08T03:06:00+00:00",
-        "summary": "The report cited industry executives and described cuts in Samsung India's television and home-appliance businesses. It did not report a company-wide global layoff figure."
-    },
-    {
-        "title": "AI job apocalypse? WEF projects 92 million jobs displaced—and 170 million created—by 2030 across major labour-market shifts",
-        "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
-        "source": "World Economic Forum · 2025 forecast",
-        "category": "AI & THE FUTURE",
-        "published": "2025-01-07T00:00:00+00:00",
-        "summary": "The estimate covers several structural trends, not AI alone. The WEF projects a net increase of 78 million jobs by 2030."
-    },
-    {
-        "title": "Trump's wealth claims face another fact-check: what the financial figures actually show",
-        "url": "https://www.factcheck.org/2026/11/factchecking-trumps-post-election-60-minutes-interview/",
-        "source": "FactCheck.org · November 2026",
-        "category": "POLITICS & MONEY",
-        "published": "2026-11-14T00:00:00+00:00",
-        "summary": "A fact-check examined statements about Trump's reported wealth and business income. This is a review of claims, not a claim that he is poor."
-    }
-]
-items.extend(curated)
-# Deduplicate and prioritise current source headlines; curated context items remain available.
+# Deduplicate by canonical URL and keep newest first.
 unique = {}
-for item in items:
+for item in all_items:
     unique[item["url"]] = item
 items = list(unique.values())
-items.sort(key=lambda x: x["published"] or "", reverse=True)
+items.sort(key=lambda row: row["published"] or "", reverse=True)
 items = items[:MAX_TOTAL]
 
+# Never overwrite a working feed with an empty result caused by feed outages.
 if not items:
-    raise SystemExit("No valid items from the publisher allowlist; keeping the previous feed unchanged.")
+    raise SystemExit("No fresh valid items were received. Previous feed preserved.")
 
 payload = {
     "updated": datetime.now(timezone.utc).isoformat(),
-    "editorial_note": "Publisher-provided headlines and excerpts. These are source links, not independently reported Vridhi articles.",
+    "editorial_note": "Publisher headlines and short excerpts. Open the source link for the full report.",
     "items": items,
     "source_errors": errors,
 }
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(f"Wrote {len(items)} attributed items to {OUTPUT}")
+print(f"Updated {OUTPUT} with {len(items)} fresh, attributed items.")
