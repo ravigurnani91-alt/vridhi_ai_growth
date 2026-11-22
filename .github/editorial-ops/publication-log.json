@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-11-22T14:30:10Z",
+  "timezone": "Asia/Kolkata",
+  "branch": "foundation/vridhi-umbrella",
+  "latest_successful_publication": {
+    "title": "India's Waste Rules Changed in 2026. Will Cities Change With Them?",
+    "canonical_url": "https://vridhi.ink/journal/india-solid-waste-rules-2026/",
+    "publication_metadata_date": "2026-11-21",
+    "article_commit": "cda88b108db5d4367ad2a3ae2bf7e4ba69423ea8",
+    "first_successful_pages_deployment_commit": "8cd14f31bc80840b393bc428efcb94d49e221b09",
+    "first_successful_pages_deployment_completed_at": "2026-11-21T12:14:31Z",
+    "first_successful_pages_deployment_completed_at_local": "2026-11-21T17:44:31+05:30",
+    "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/44902846871",
+    "deployment_status": "success"
+  },
+  "current_run": {
+    "checked_at": "2026-11-22T14:30:10Z",
+    "checked_at_local": "2026-11-22T20:00:10+05:30",
+    "elapsed_since_latest_article_deployment": "26h 15m 39s",
+    "publication_gate": "held_less_than_48_hours",
+    "earliest_48h_threshold": "2026-11-23T12:14:31Z",
+    "earliest_48h_threshold_local": "2026-11-23T17:44:31+05:30",
+    "next_scheduled_check": "2026-11-23T19:00:00+05:30",
+    "new_article_published": false,
+    "social_campaign_created": false,
+    "website_correction": {
+      "description": "Replaced a literal backslash-n between the newest Journal card and the editorial promise notice with a real line break.",
+      "commit": "74762e9a02350d74cea63d0db53ff28305e6a60a",
+      "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/45033086189",
+      "deployment_status": "success",
+      "counts_as_new_article": false
+    },
+    "feed_refresh": {
+      "updated_at": "2026-11-22T14:21:01Z",
+      "item_count": 40,
+      "visible_source_labels": [
+        "BBC World",
+        "BBC Business",
+        "Variety",
+        "BBC Entertainment & Arts",
+        "NASA",
+        "BBC Technology"
+      ],
+      "source_errors": [],
+      "commit": "eafb9ce969684209900a4ab2e9f273b3645b1c95",
+      "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/45032342945",
+      "deployment_status": "success"
+    },
+    "strongest_candidate": {
+      "headline": "COP31 ends without an overarching climate deal after fossil-fuel dispute",
+      "proposed_url": "https://vridhi.ink/journal/cop31-ends-without-overarching-climate-deal/",
+      "desk": "India & World Briefs",
+      "draft_path": ".github/editorial-ops/queue/cop31-ends-without-overarching-climate-deal.md",
+      "fact_gate": "passed_for_narrow_outcome",
+      "publication_status": "queued_for_next_eligible_window",
+      "verification_gaps": [
+        "Official UNFCCC conference page had not yet posted a closing-outcome summary at the time checked; verify the final status of individual agenda decisions against the official record before publication."
+      ],
+      "source_urls": [
+        "https://www.reuters.com/sustainability/cop/cop31-climate-deal-balance-after-fractious-talks-2026-11-22/",
+        "https://apnews.com/article/climate-un-turkey-fossil-fuels-global-warming-f6e36c4caf13ec6fed57c9f077cbd067",
+        "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334571&lang=1&reg=3",
+        "https://unfccc.int/cop31"
+      ]
+    },
+    "metricool": {
+      "brand_id": 8031691,
+      "timezone": "Asia/Calcutta",
+      "scheduled_posts_found_for_2026_11_22_to_2026_11_27": 0,
+      "networks": {
+        "facebook": {
+          "connected": true,
+          "status": "not_scheduled",
+          "reason": "48-hour publication gate"
+        },
+        "instagram": {
+          "connected": true,
+          "status": "not_scheduled",
+          "reason": "48-hour publication gate; image or video asset required"
+        },
+        "linkedin": {
+          "connected": true,
+          "status": "not_scheduled",
+          "reason": "48-hour publication gate"
+        },
+        "youtube": {
+          "connected": true,
+          "status": "not_scheduled",
+          "reason": "No finished video asset; article or thumbnail alone is not a video"
+        },
+        "x": {
+          "connected": false,
+          "status": "not_connected"
+        },
+        "threads": {
+          "connected": false,
+          "status": "not_connected"
+        },
+        "pinterest": {
+          "connected": false,
+          "status": "not_connected"
+        },
+        "tiktok": {
+          "connected": false,
+          "status": "not_connected"
+        },
+        "bluesky": {
+          "connected": false,
+          "status": "not_connected"
+        },
+        "google_business_profile": {
+          "connected": false,
+          "status": "not_connected"
+        }
+      }
+    }
+  }
+}
