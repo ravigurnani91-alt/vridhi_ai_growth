@@ -118,6 +118,30 @@
           "status": "not_connected"
         }
       }
-    }
+    },
+    "monitoring_candidates": [
+      {
+        "headline": "India–Bangladesh Ganga Water Treaty approaches its 12 December 2026 expiry",
+        "status": "monitoring_only",
+        "why_it_matters": "A 30-year transboundary water-sharing agreement is nearing expiry while the Joint Rivers Commission's 22–23 November meeting is under way in Dhaka. This has direct implications for dry-season flows, agriculture, river diplomacy and communities on both sides.",
+        "confirmed_from_primary_sources": [
+          "Bangladesh Joint Rivers Commission page says the 1996 treaty runs for 30 years, is implemented January–May, and expires in 2026.",
+          "The treaty text hosted by India's Department of Water Resources says Article XII makes renewal subject to mutual consent."
+        ],
+        "verification_gaps": [
+          "No official post-meeting readout or jointly agreed outcome from the 22–23 November Joint Committee meeting was found at the time checked.",
+          "Claims that the current meeting lacks a mandate to negotiate renewal are reported by news outlets and should remain attributed until an official agenda or statement confirms them.",
+          "Do not imply that the treaty has lapsed or that either government has decided not to renew it; the expiry date is 12 December 2026."
+        ],
+        "source_urls": [
+          "https://jrcb.portal.gov.bd/pages/static-pages/6922dcbc933eb65569e11bdc",
+          "https://mowr.nic.in/core/WebsiteUpload/2023/2023011877.pdf",
+          "https://www.tbsnews.net/foreign-policy/dhaka-delhi-discuss-water-issues-sunday-1610011",
+          "https://timesofindia.indiatimes.com/india/indian-team-leaves-for-bangladesh-for-talks-on-ganga-water/articleshow/136041808.cms",
+          "https://www.thedailystar.net/news/bangladesh/news/ganges-treaty-expiring-dec-12-dhaka-still-waiting-delhi-come-the-table-4326771",
+          "https://theprint.in/diplomacy/exclusive-clock-ticking-on-ganga-water-treaty-indian-delegation-heads-to-dhaka-but-renewal-not-on-agenda/3101531/"
+        ]
+      }
+    ]
   }
 }
