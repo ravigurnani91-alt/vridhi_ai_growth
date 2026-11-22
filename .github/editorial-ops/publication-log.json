@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-22T14:30:10Z",
+  "last_updated": "2026-11-22T14:32:19Z",
   "timezone": "Asia/Kolkata",
   "branch": "foundation/vridhi-umbrella",
   "latest_successful_publication": {
@@ -63,7 +63,10 @@
         "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
         "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334571&lang=1&reg=3",
         "https://unfccc.int/cop31"
-      ]
+      ],
+      "draft_commit": "78265ed86741db925a0f558b6c36afdbbe6ec8f7",
+      "word_count": 478,
+      "draft_revision": "Trimmed to the 250–500-word brief target."
     },
     "metricool": {
       "brand_id": 8031691,
