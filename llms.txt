@@ -11,7 +11,6 @@ Editorial language: English initially.
 - Vridhi Discover: https://vridhi.ink/discover/ — explainers and researched stories about science, technology, business, cities, history, mythology, cultures, food, psychology, hidden places and practical knowledge.
 - Vridhi Earth: https://vridhi.ink/earth/ — evidence-led environmental intelligence about water, waste, sewage, air, climate, biodiversity, land use, energy and policy. Coverage is intended to include Indian states, union territories, cities, districts, villages and relevant global developments.
 - Vridhi Originals: https://vridhi.ink/originals/ — original books, stories, research publications and learning products created under the Vridhi brand.
-- Vridhi Experiences: https://vridhi.ink/experiences/ — interactive learning, quizzes, maps, timelines and tools.
 - About Vridhi: https://vridhi.ink/about/ — mission and editorial principles.
 
 ## Editorial coverage
