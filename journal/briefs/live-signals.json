@@ -1,7 +1,183 @@
 {
-  "updated": "2026-11-22T23:25:55.080083+00:00",
+  "updated": "2026-11-23T06:43:09.984323+00:00",
   "editorial_note": "Publisher headlines and short excerpts. Open the source link for the full report.",
   "items": [
+    {
+      "title": "Why deforestation science gets shifting cultivation wrong [Commentary]",
+      "url": "https://india.mongabay.com/2026/11/why-deforestation-science-gets-shifting-cultivation-wrong-commentary/",
+      "source": "Mongabay India",
+      "category": "EARTH & DISCOVERY",
+      "published": "2026-11-23T11:26:34+00:00",
+      "summary": "Estimating deforestation — the permanent conversion of forest to another land use — is only as reliable as our ability to distinguish one land use from another. If we get that wrong, we misjudge not only how much forest is being lost but also what is driving the loss. Consider shifting cultivation, also known as […]"
+    },
+    {
+      "title": "Beatles venue may not play live music on rooftop",
+      "url": "https://www.bbc.co.uk/news/articles/ckp80ynrn3mvo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Entertainment & Arts",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T05:57:45+00:00",
+      "summary": "The proposed museum on Savile Row may get the greenlight on Tuesday but is facing objections."
+    },
+    {
+      "title": "What's next after no deal at COP31 climate talks?",
+      "url": "https://www.bbc.co.uk/news/videos/cr1ewge81q4qo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-23T05:34:39+00:00",
+      "summary": "The talks have been the longest-running in the summit's history, with negotiations breaking down two days after they had been due to end."
+    },
+    {
+      "title": "Boy, 7, pulled alive from rubble hours after Russian strike on Ukraine, rescuers say",
+      "url": "https://www.bbc.co.uk/news/articles/cqdr15l32d3go?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-23T05:33:17+00:00",
+      "summary": "Eleven people are dead in the attack on Dymer, with rescue efforts ongoing to find those still missing from the residential building."
+    },
+    {
+      "title": "Longest-ever UN climate talks end with no deal as deep divisions exposed",
+      "url": "https://www.bbc.co.uk/news/articles/cqwy06zrd26lo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-23T05:15:06+00:00",
+      "summary": "The prime minister of Australia, which co-hosted COP31, attributed the failure to \"difficult geopolitical times\"."
+    },
+    {
+      "title": "APOD: 2026 November 23 – The Emergence of Dark Nebula Lynds 1251",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-23-the-emergence-of-dark-nebula-lynds-1251/",
+      "source": "NASA",
+      "category": "SCIENCE & SPACE",
+      "published": "2026-11-23T05:05:00+00:00",
+      "summary": "APOD Science APOD APOD: 2026 November 23 – The… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. The Emergence […]"
+    },
+    {
+      "title": "Laser Focus at the Top of the World",
+      "url": "https://science.nasa.gov/earth/earth-observatory/laser-focus-at-the-top-of-the-world/",
+      "source": "NASA",
+      "category": "SCIENCE & SPACE",
+      "published": "2026-11-23T05:01:00+00:00",
+      "summary": "A next-generation geodetic instrument developed by NASA, part of a network that helps measure satellites’ orbits and the planet’s shape, has debuted in Svalbard, Norway."
+    },
+    {
+      "title": "Korea Box Office: Mystery Thriller ‘White Blast’ Opens at No. 1, Ending Five-Week ‘Chiikawa’ Reign",
+      "url": "https://variety.com/2026/film/box-office/korea-box-office-mystery-thriller-white-blast-1236955658/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T04:49:39+00:00",
+      "summary": "Showbox’s mystery thriller “White Blast” debuted atop the South Korean box office over the weekend of Nov. 20–22, ending the five-week chart-topping run of Japanese anime sensation “Chiikawa the Movie: The Secret of the Mermaid Island.” According to data from KOBIS, the tracking service operated by the Korean Film Council, the newly opened local release […]"
+    },
+    {
+      "title": "Manchester's Co-op Live evacuated after 'unknown substance' let off in crowd",
+      "url": "https://www.bbc.co.uk/news/articles/c9e851dn8516o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Entertainment & Arts",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T04:21:50+00:00",
+      "summary": "One person was taken to hospital after a major incident was declared during a performance by US rapper Don Toliver."
+    },
+    {
+      "title": "Pip assessments need 'fundamental overhaul', report to say",
+      "url": "https://www.bbc.co.uk/news/articles/cvlyj3rn201xo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "BUSINESS",
+      "published": "2026-11-23T04:01:13+00:00",
+      "summary": "Disability minister Sir Stephen Timms says he will recommend major reforms to the personal independence payment."
+    },
+    {
+      "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
+      "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-23T02:59:35+00:00",
+      "summary": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
+    },
+    {
+      "title": "Spain Pitches Incentives, Crews and a 500 Million-Strong Spanish-Speaking Market to India at WAVES Film Bazaar",
+      "url": "https://variety.com/2026/film/markets-festivals/spain-coproductions-incentives-india-waves-film-bazaar-1236955634/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T02:43:23+00:00",
+      "summary": "Spain, the Country of Honor at this year’s International Film Festival of India (IFFI), made its case to Indian filmmakers at WAVES Film Bazaar in Goa, laying out its incentives, locations and crews and pushing for closer co-production ties. The panel, “Spain: Where Stories Find Their Stage – Incentives, Locations & Co-production Opportunities,” was part […]"
+    },
+    {
+      "title": "China Box Office: ‘The Hunger Games: Sunrise on the Reaping’ Opens at No. 1 in Quiet Frame",
+      "url": "https://variety.com/2026/film/box-office/china-box-office-the-hunger-games-sunrise-on-the-reaping-1236955624/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T02:33:16+00:00",
+      "summary": "Lionsgate Films’ dystopian prequel “The Hunger Games: Sunrise on the Reaping” debuted atop the mainland China box office during the Nov. 20–22 weekend, collecting RMB39.3 million ($5.9 million) over its three-day opening frame, according to data from Artisan Gateway. New Classics Pictures’ crime procedural drama “Traces of Justice” moved to second place afte"
+    },
+    {
+      "title": "Don Toliver’s Manchester Concert Evacuated After Suspected Tear Gas Released Into Crowd",
+      "url": "https://variety.com/2026/music/news/don-toliver-manchester-concert-evacuated-tear-gas-1236955605/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T02:00:46+00:00",
+      "summary": "Don Toliver’s concert at Co-op Live in Manchester, England ended in an evacuation as tear gas was released in the crowd on Sunday. “It is understood that a substance believed to be tear gas was let off in the crowd towards the end of a concert,” wrote the Greater Manchester Police in a statement. According […]"
+    },
+    {
+      "title": "Hailee Steinfeld Confirms ‘Avengers: Doomsday’ Return as Kate Bishop",
+      "url": "https://variety.com/2026/film/news/hailee-steinfeld-avengers-doomsday-kate-bishop-1236955585/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T01:32:26+00:00",
+      "summary": "Hailee Steinfeld will return to the Marvel Cinematic Universe as Kate Bishop in the forthcoming “Avengers: Doomsday.” Marvel Studios and Disney Animation announced the news Sunday with an Instagram post featuring Steinfeld. “Hey, so I’m here with my movie ‘Hexed,’ but it looks like they delivered a chair from a different movie,” said the actress […]"
+    },
+    {
+      "title": "Energy bills will soar - here's how you can ease the pain",
+      "url": "https://www.bbc.co.uk/news/articles/crm4rygl4m3o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "BUSINESS",
+      "published": "2026-11-23T01:05:07+00:00",
+      "summary": "Household energy bills are about to increase but there are ways to keep a lid on your expenditure."
+    },
+    {
+      "title": "Australian music legend Molly Meldrum dies aged 83",
+      "url": "https://www.bbc.co.uk/news/articles/c3qj57rkd2k1o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Entertainment & Arts",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-23T01:03:35+00:00",
+      "summary": "The promoter and broadcaster helped define the music tastes of Australians for decades."
+    },
+    {
+      "title": "Italian jeweller and businessman Paolo Bulgari dies aged 89",
+      "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "BUSINESS",
+      "published": "2026-11-23T00:33:36+00:00",
+      "summary": "In a statement to Italian media, his family remember him as \"the greatest jeweller of our time\"."
+    },
+    {
+      "title": "What is going on with Poundland?",
+      "url": "https://www.bbc.co.uk/news/articles/cm4g10p2r0g9o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "BUSINESS",
+      "published": "2026-11-23T00:22:27+00:00",
+      "summary": "Poundland has a matter of days to find a buyer or face collapsing into administration. Why?"
+    },
+    {
+      "title": "San Francisco is enjoying an AI boom, but worries about a crash are growing",
+      "url": "https://www.bbc.co.uk/news/articles/cqe9k09j9jv4o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Business",
+      "category": "BUSINESS",
+      "published": "2026-11-23T00:08:00+00:00",
+      "summary": "AI employees in the industry's epicentre - San Francisco - worry that the sector is overheated."
+    },
+    {
+      "title": "Ateez Debuts at No. 1 on Billboard 200 for the Third Time This Year; U2’s ‘Carnaval de Luz’ Bows at No. 4",
+      "url": "https://variety.com/2026/music/news/ateez-u2-album-chart-debut-billboard-1236955537/",
+      "source": "Variety",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-22T23:27:32+00:00",
+      "summary": "The K-pop group Ateez continued its string of chart successes with the No. 1 bow on the Billboard 200 album chart of “Golden Hour: Part 6.” It’s the third time in 2026 that the group has had an EP debut in the top spot; the last such occasion came in July, when they premiered at […]"
+    },
+    {
+      "title": "Burnham to tell MPs 'landmark' EU deal could make next decade 'much better'",
+      "url": "https://www.bbc.co.uk/news/articles/cmde1dy82lepo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-22T22:49:10+00:00",
+      "summary": "The prime minister will tell MPs the deal agreed on Friday is a \"choice between a broken status quo or change\"."
+    },
     {
       "title": "Why Another ‘Hunger Games’ Movie Isn’t Coming Anytime Soon",
       "url": "https://variety.com/2026/film/news/hunger-games-another-movie-isnt-coming-anytime-soon-1236955499/",
@@ -9,14 +185,6 @@
       "category": "ENTERTAINMENT",
       "published": "2026-11-22T22:46:48+00:00",
       "summary": "“The Hunger Games” franchise has caught fire once again. “Sunrise on the Reaping,” the sixth installment in the billion-dollar dystopian franchise, has defied expectations and opened to $120 million at the box office, nearly tripling the $44 million opening of the 2023 prequel “The Ballad of Songbirds and Snakes.” Surely part of the success here […]"
-    },
-    {
-      "title": "'Danger seems greater all the time': Ukrainians search for missing after Russian strikes",
-      "url": "https://www.bbc.co.uk/news/videos/cre3dvd1k9y1o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T22:37:43+00:00",
-      "summary": "The BBC's Sarah Rainsford reports from the scene of a collapsed residential building in Ukraine's Kyiv region."
     },
     {
       "title": "‘Glee’ Star Chris Colfer Says He Forgot Kurt Hummel ‘Meant So Much to People’ Because of the ‘Homophobia and Hatred’ He Experienced During the Show",
@@ -51,54 +219,6 @@
       "summary": "Though his career has spanned over four decades, John Turturro still feels like it’s just the beginning. The 69-year-old actor and filmmaker was honored with a tribute award at Marrakech Film Festival on Sunday night, where he was greeted with roaring applause as he mimed the iconic bowling moves of his “The Big Lebowski” character […]"
     },
     {
-      "title": "‘Hunger Games’ Lead Joseph Zada on Filming His Breakout Movie Role and ‘Sunrise on the Reaping’s’ Intense Stunts: ‘I Look Like a F—ing Action Star!’",
-      "url": "https://variety.com/2026/film/features/hunger-games-sunrise-on-the-reaping-joseph-zada-action-scenes-1236954627/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T20:30:00+00:00",
-      "summary": "When it comes to taking on the leading role in one of the most beloved film (and literary) franchises, sometimes you just have to jump right in. At least that was the case for Joseph Zada, whose first day on set of “The Hunger Games: Sunrise on the Reaping” was spent filming the opening cornucopia […]"
-    },
-    {
-      "title": "Explosion on Russian ship at Libya port caused by suspected drone attack, officials say",
-      "url": "https://www.bbc.co.uk/news/articles/cr894gjz0j0yo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T20:28:09+00:00",
-      "summary": "Libya's eastern government says the ship had stopped for fuel and supplies on its way back to Russia."
-    },
-    {
-      "title": "Democrats win largest House majority since 1992 after flipping North Carolina seat",
-      "url": "https://www.bbc.co.uk/news/articles/c6vg29g7dlyno?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T20:26:24+00:00",
-      "summary": "Democrats have now won at least 258 seats in the midterms compared to Republicans, who hold at least 173 seats."
-    },
-    {
-      "title": "Ina Garten Says She Turned Down ‘Dancing With the Stars’ Because the Thought of Competing Gave Her ‘Nightmares’",
-      "url": "https://variety.com/2026/tv/news/ina-garten-dancing-with-the-stars-1236955404/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T20:14:53+00:00",
-      "summary": "Celebrity chef Ina Garten will not be cooking up a freestyle for “Dancing with the Stars” in the near future. Garten told Rose Byrne on a recent episode of her “Happy Hour” podcast that she would be too nervous to compete. She opened the floor by asking Byrne if she had ever “not done something […]"
-    },
-    {
-      "title": "‘You Can See Everything’ Becomes Rare Documentary to Surpass $100 Million Globally",
-      "url": "https://variety.com/2026/film/box-office/you-can-see-everything-crosses-100-million-global-box-office-1236955393/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T19:57:37+00:00",
-      "summary": "“You Can See Everything” has surpassed $100 million globally, a rare box office milestone for a documentary. So far, the zeitgeist-capturing look at Theranos fraudster Elizabeth Holmes has generated a staggering $93.4 million at the domestic box office and $9 million overseas for a worldwide tally of $102.4 million. It continues to mint money for […]"
-    },
-    {
-      "title": "Noah Kahan Deserved a Lot More Grammy Love Than Just One Minor Nomination. Here’s Why He Didn’t Get It",
-      "url": "https://variety.com/2026/music/columns/noah-kahan-lack-of-grammy-nominations-reasons-1236955321/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T19:30:19+00:00",
-      "summary": "In previous eras of less pervasive social media, we usually could only guess at just how disappointed music and film personalities were when they didn’t fare well with Grammy or Oscar nominations. But lately, more and more major and minor figures have been up-front and honest in sharing with their fans that, hey, yes, they’re […]"
-    },
-    {
       "title": "65 Years of Human Spaceflight at NASA Johnson",
       "url": "https://www.nasa.gov/centers-and-facilities/johnson/65-years-of-human-spaceflight-at-nasa-johnson/",
       "source": "NASA",
@@ -107,52 +227,20 @@
       "summary": "For 65 years, NASA’s Johnson Space Center in Houston has helped shape human spaceflight, from the Gemini missions that demonstrated rendezvous and docking techniques needed for Apollo to the research conducted aboard the International Space Station, which has supported a continuous human presence for more than 26 years. Today, Johnson teams are preparing cre"
     },
     {
-      "title": "What's next after no deal at COP31 climate talks?",
-      "url": "https://www.bbc.co.uk/news/videos/cr1ewge81q4qo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T18:57:24+00:00",
-      "summary": "The talks have been the longest-running in the summit's history, with negotiations breaking down two days after they had been due to end."
-    },
-    {
-      "title": "Noah Schnapp Says He Auditioned to Play Haymitch in ‘Hunger Games: Sunrise on the Reaping’: ‘They Picked Right for This One’",
-      "url": "https://variety.com/2026/film/news/noah-schnapp-hunger-games-sunrise-on-the-reaping-haymich-1236955369/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T18:47:06+00:00",
-      "summary": "The odds were not in Noah Schnapp’s favor when it came to joining “The Hunger Games: Sunrise on the Reaping.” The “Stranger Things” actor revealed on social media on Saturday that he had auditioned for the lead role of Haymitch. “POV: my audition for Haymitch,” he wrote on his Instagram story. Tagging leading man Joseph […]"
-    },
-    {
-      "title": "US Army to detonate tonnes of unstable explosives in Iowa despite court order",
-      "url": "https://www.bbc.co.uk/news/articles/cvglrx764gdxo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T18:29:46+00:00",
-      "summary": "The Army says \"swift action\" is necessary to protect its personnel and nearby communities around its ammunition plant in Iowa."
-    },
-    {
-      "title": "Sheila Mangubat, ’90 Day Fiancé: Before the 90 Days’ Star, Dies at 35",
-      "url": "https://variety.com/2026/tv/people-news/sheila-mangubat-dead-90-day-fiance-1236955340/",
-      "source": "Variety",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T18:27:55+00:00",
-      "summary": "Sheila Mangubat, who appeared on the reality series “90 Day Fiancé: Before the 90 Days,” has died. She was 35. David Dangerfield, Mangubat’s former fiancé, announced her death in an Instagram post shared on Saturday. A cause of death was not shared. “It breaks my heart to share the news from her family that Sheila […]"
-    },
-    {
-      "title": "COP31 fails to reach major climate deal as talks expose deep divisions",
-      "url": "https://www.bbc.co.uk/news/articles/cqwy06zrd26lo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC World",
-      "category": "WORLD",
-      "published": "2026-11-22T18:17:59+00:00",
-      "summary": "The talks fail to make a breakthrough on tackling climate change after a row about mentioning fossil fuels."
-    },
-    {
       "title": "Russia-bound ship towed away after it was attacked in Gulf of Finland",
       "url": "https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss",
       "source": "BBC World",
       "category": "WORLD",
       "published": "2026-11-22T17:18:26+00:00",
       "summary": "Finnish defence forces say that Ukraine was likely behind the drone strike on Saturday. Kyiv has yet to comment."
+    },
+    {
+      "title": "Russell Brand's wife says she'll honour prison rules after message row",
+      "url": "https://www.bbc.co.uk/news/articles/cq8e0pzp43w4o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Entertainment & Arts",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-22T16:51:57+00:00",
+      "summary": "The wife of the disgraced comedian says she will stick to the \"parameters\", after reading out a message from her inmate husband."
     },
     {
       "title": "Three killed and dozens missing after fire at Indonesian factory",
@@ -169,6 +257,14 @@
       "category": "BUSINESS",
       "published": "2026-11-22T13:50:21+00:00",
       "summary": "Chris O'Shea says the number of people unable or unwilling to pay their energy bills will increase when prices jump in the new year."
+    },
+    {
+      "title": "ITV investigating soap actor after bar incident",
+      "url": "https://www.bbc.co.uk/news/articles/cj5y16v79kd1o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC Entertainment & Arts",
+      "category": "ENTERTAINMENT",
+      "published": "2026-11-22T13:16:14+00:00",
+      "summary": "Police say they attended a Manchester bar after reports of a disturbance earlier this month."
     },
     {
       "title": "South Korea education minister resigns over exam cheating scandal",
@@ -195,30 +291,6 @@
       "summary": "Sir Andrew Mitchell says access should be easier for people tackling financial crime."
     },
     {
-      "title": "Du Maurier family photos shared for first time",
-      "url": "https://www.bbc.co.uk/news/articles/c6jrwxnl9v14o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T07:20:17+00:00",
-      "summary": "Photos showing the author and her family have been shared for the first time by her grandson."
-    },
-    {
-      "title": "From a village bakery to headlining Glastonbury: How Harry Styles became a star",
-      "url": "https://www.bbc.co.uk/news/articles/cq782xz5nkg4o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T07:14:24+00:00",
-      "summary": "The singer will make his debut at the festival next year as one of the event's curtain-raising artists."
-    },
-    {
-      "title": "Italian jeweller and businessman Paolo Bulgari dies aged 89",
-      "url": "https://www.bbc.co.uk/news/articles/c8e39qk5vrpdo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "category": "BUSINESS",
-      "published": "2026-11-22T07:12:41+00:00",
-      "summary": "In a statement to Italian media, his family remember him as \"the greatest jeweller of our time\"."
-    },
-    {
       "title": "APOD: 2026 November 22 – Swirls and Colors on Jupiter from Juno",
       "url": "https://science.nasa.gov/image-article/apod-2026-november-22-swirls-and-colors-on-jupiter-from-juno/",
       "source": "NASA",
@@ -243,84 +315,12 @@
       "summary": "People say they often hear nothing back after applying for jobs. But could employers be forced to respond to every applicant?"
     },
     {
-      "title": "Why Nicola Coughlan's new drama might leave viewers uncomfortable",
-      "url": "https://www.bbc.co.uk/news/articles/cj4gn7x05yygo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-22T00:01:27+00:00",
-      "summary": "I Am Helen is a must-watch according to critics, but the cast don't want viewers sitting comfortably."
-    },
-    {
-      "title": "Spitting Image co-creator Peter Fluck dies aged 85",
-      "url": "https://www.bbc.co.uk/news/articles/cm3vg9dqr6zyo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-21T21:39:22+00:00",
-      "summary": "The 85-year-old he died in the early hours of Saturday at home in Cornwall, following a recent illness."
-    },
-    {
       "title": "Bad Girls star Helen Fraser dies aged 84",
       "url": "https://www.bbc.co.uk/news/articles/cqlyjwng3xdwo?at_medium=RSS&at_campaign=rss",
       "source": "BBC Entertainment & Arts",
       "category": "ENTERTAINMENT",
       "published": "2026-11-21T12:17:46+00:00",
       "summary": "Actress Helen Fraser dies at 84 in an Eye care home after a successful career in TV, theatre and film."
-    },
-    {
-      "title": "APOD: 2026 November 21 – Voyager’s Neptune",
-      "url": "https://science.nasa.gov/image-article/apod-2026-november-21-voyagers-neptune/",
-      "source": "NASA",
-      "category": "SCIENCE & SPACE",
-      "published": "2026-11-21T05:05:00+00:00",
-      "summary": "APODScienceAPODAPOD: 2026 November 21 –…Today’s APODArchiveSubmissionsIndexSearchCalendarRSSEducationAboutDiscuss APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. Voyager’s Neptune Explanation: Cruising "
-    },
-    {
-      "title": "Can AI really help spot Black Friday deals? We put it to the test",
-      "url": "https://www.bbc.co.uk/news/articles/cw8dv4jmnle2o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "category": "BUSINESS",
-      "published": "2026-11-21T00:06:11+00:00",
-      "summary": "We put four AI models to the test to see if they could save us money on a new TV."
-    },
-    {
-      "title": "Who will be Robert Pattinson's 'Bond girl' - and does the role need to change?",
-      "url": "https://www.bbc.co.uk/news/articles/cr4g1l7x52jno?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-21T00:03:16+00:00",
-      "summary": "Speculation is rife as to who will play the new 007's leading lady, with commentators saying she will need a \"very strong identity\"."
-    },
-    {
-      "title": "In a year of AI solving maths problems, an Anthropic worker says he may have cracked the biggest",
-      "url": "https://www.bbc.co.uk/news/articles/c6pqr2g7w059o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Technology",
-      "category": "TECH & AI",
-      "published": "2026-11-20T23:08:57+00:00",
-      "summary": "A mathematician at Anthropic says he used an AI to prove the famed Riemann hypothesis, though verification will take some time."
-    },
-    {
-      "title": "GTA 6 sales hit $3.8bn in a single day - the biggest entertainment launch in history",
-      "url": "https://www.bbc.co.uk/news/articles/c9zr5nyv5dj2o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Technology",
-      "category": "TECH & AI",
-      "published": "2026-11-20T22:53:24+00:00",
-      "summary": "The mammoth figure surpasses every video game launch and single-day film box office record."
-    },
-    {
-      "title": "Tech stock sell-off drags markets down as Anthropic shares slide",
-      "url": "https://www.bbc.co.uk/news/articles/c6808ym10vzgo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "category": "BUSINESS",
-      "published": "2026-11-20T22:42:47+00:00",
-      "summary": "Pressures weighed on US markets, with the S&P 500 and the Dow Jones Industrial Average pushed into correction territory."
-    },
-    {
-      "title": "Curiosity Spots Drifting Twilight Clouds",
-      "url": "https://science.nasa.gov/photojournal/curiosity-spots-drifting-twilight-clouds/",
-      "source": "NASA",
-      "category": "SCIENCE & SPACE",
-      "published": "2026-11-20T22:27:05+00:00",
-      "summary": "Description NASA’s Curiosity Mars rover captured these drifting clouds on Oct. 31, 2026, the 5,061st Martian day, or sol, of the mission. The rover uses its navigation cameras to capture post-sunset clouds, called twilight clouds, which appear for only a short time each fall over Gale Crater, which it has been exploring for more than […]"
     }
   ],
   "source_errors": []
