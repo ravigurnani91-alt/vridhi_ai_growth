@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-24T13:43:38Z",
+  "last_updated": "2026-11-24T13:51:37Z",
   "timezone": "Asia/Kolkata",
   "branch": "foundation/vridhi-umbrella",
   "latest_successful_publication": {
@@ -38,8 +38,8 @@
       "fact_gate": "passed_for_narrow_outcome",
       "publication_status": "verified_draft_updated_and_queued; held_less_than_48_hours",
       "draft_path": ".github/editorial-ops/queue/cop31-ends-without-overarching-climate-deal.md",
-      "draft_update_commit": "d9240359c20ccd538d6105e213a5b133e9534418",
-      "word_count": 426,
+      "draft_update_commit": "e1f9fb77969e146d5979f40601041b878ed2561b",
+      "word_count": 491,
       "verification_gaps": [
         "No attributable post-summit Indian government response was located; India's 10 November opening statement is explicitly labelled as its opening position.",
         "Do not describe COP31 as having produced no agreements: the UNFCCC confirms progress on just transition, climate finance, adaptation and electrification while the presidency-led cover decision was not agreed.",
@@ -51,7 +51,8 @@
         "https://www.reuters.com/sustainability/cop/turkeys-erdogan-says-cop31-laid-groundwork-for-more-climate-talks-despite-lack-deal-2026-11-23/",
         "https://apnews.com/article/f6e36c4caf13ec6fed57c9f077cbd067",
         "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334571&lang=1&reg=3"
-      ]
+      ],
+      "draft_revision": "Updated against the UNFCCC's official 23 November closing summary; trimmed to the 250–500-word brief standard including metadata and source list."
     },
     "monitoring_candidates": [
       {
