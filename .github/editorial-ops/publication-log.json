@@ -1,147 +1,153 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-22T14:33:27Z",
+  "last_updated": "2026-11-24T13:43:38Z",
   "timezone": "Asia/Kolkata",
   "branch": "foundation/vridhi-umbrella",
   "latest_successful_publication": {
-    "title": "India's Waste Rules Changed in 2026. Will Cities Change With Them?",
-    "canonical_url": "https://vridhi.ink/journal/india-solid-waste-rules-2026/",
-    "publication_metadata_date": "2026-11-21",
-    "article_commit": "cda88b108db5d4367ad2a3ae2bf7e4ba69423ea8",
-    "first_successful_pages_deployment_commit": "8cd14f31bc80840b393bc428efcb94d49e221b09",
-    "first_successful_pages_deployment_completed_at": "2026-11-21T12:14:31Z",
-    "first_successful_pages_deployment_completed_at_local": "2026-11-21T17:44:31+05:30",
-    "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/44902846871",
-    "deployment_status": "success"
+    "title": "Kathmandu, Beyond the Postcards",
+    "canonical_url": "https://vridhi.ink/explore/kathmandu-beyond-the-postcards/",
+    "publication_metadata_date": "2026-11-23",
+    "article_commit": "f7d643e5a2eb5ae6e0c4d3beeafec488af795851",
+    "article_commit_created_at_utc": "2026-11-23T11:35:15Z",
+    "article_commit_created_at_local": "2026-11-23T17:05:15+05:30",
+    "deployment_commit": null,
+    "deployment_completed_at": null,
+    "deployment_status": "public_collection_and_explore_listing_verified_live_on_2026-11-24; exact_first_deployment_time_not_retrieved",
+    "deployment_verification_url": "https://vridhi.ink/explore/kathmandu-beyond-the-postcards/"
   },
   "current_run": {
-    "checked_at": "2026-11-22T14:30:10Z",
-    "checked_at_local": "2026-11-22T20:00:10+05:30",
-    "elapsed_since_latest_article_deployment": "26h 15m 39s",
+    "checked_at": "2026-11-24T13:43:38Z",
+    "checked_at_local": "2026-11-24T19:13:38+05:30",
+    "elapsed_since_latest_article_commit": "26h 8m 23s",
     "publication_gate": "held_less_than_48_hours",
-    "earliest_48h_threshold": "2026-11-23T12:14:31Z",
-    "earliest_48h_threshold_local": "2026-11-23T17:44:31+05:30",
-    "next_scheduled_check": "2026-11-23T19:00:00+05:30",
+    "earliest_48h_threshold": "2026-11-25T11:35:15Z",
+    "earliest_48h_threshold_local": "2026-11-25T17:05:15+05:30",
+    "next_scheduled_check": "2026-11-25T19:00:00+05:30",
     "new_article_published": false,
     "social_campaign_created": false,
-    "website_correction": {
-      "description": "Replaced a literal backslash-n between the newest Journal card and the editorial promise notice with a real line break.",
-      "commit": "74762e9a02350d74cea63d0db53ff28305e6a60a",
-      "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/45033086189",
-      "deployment_status": "success",
-      "counts_as_new_article": false
-    },
-    "feed_refresh": {
-      "updated_at": "2026-11-22T14:21:01Z",
-      "item_count": 40,
-      "visible_source_labels": [
-        "BBC World",
-        "BBC Business",
-        "Variety",
-        "BBC Entertainment & Arts",
-        "NASA",
-        "BBC Technology"
-      ],
-      "source_errors": [],
-      "commit": "eafb9ce969684209900a4ab2e9f273b3645b1c95",
-      "deployment_run_url": "https://github.com/ravigurnani91-alt/vridhi_ai_growth/actions/runs/45032342945",
-      "deployment_status": "success"
+    "branch_audit": {
+      "approved_branch_exists": true,
+      "commits_after_latest_article_commit": 6,
+      "changes_after_latest_article_commit": "Kathmandu guide refinements and live-source feed refresh; no newer article-publication files identified in the branch comparison",
+      "main_or_backups_modified": false
     },
     "strongest_candidate": {
-      "headline": "COP31 ends without an overarching climate deal after fossil-fuel dispute",
+      "headline": "COP31 ends without an overarching climate pact. What did countries agree—and what remains unresolved?",
       "proposed_url": "https://vridhi.ink/journal/cop31-ends-without-overarching-climate-deal/",
       "desk": "India & World Briefs",
-      "draft_path": ".github/editorial-ops/queue/cop31-ends-without-overarching-climate-deal.md",
       "fact_gate": "passed_for_narrow_outcome",
-      "publication_status": "queued_for_next_eligible_window",
+      "publication_status": "verified_draft_updated_and_queued; held_less_than_48_hours",
+      "draft_path": ".github/editorial-ops/queue/cop31-ends-without-overarching-climate-deal.md",
+      "draft_update_commit": "d9240359c20ccd538d6105e213a5b133e9534418",
+      "word_count": 426,
       "verification_gaps": [
-        "Official UNFCCC conference page had not yet posted a closing-outcome summary at the time checked; verify the final status of individual agenda decisions against the official record before publication."
+        "No attributable post-summit Indian government response was located; India's 10 November opening statement is explicitly labelled as its opening position.",
+        "Do not describe COP31 as having produced no agreements: the UNFCCC confirms progress on just transition, climate finance, adaptation and electrification while the presidency-led cover decision was not agreed.",
+        "A detailed item-by-item audit of all 46 decisions mentioned by Turkey's President is not complete; the draft uses the UNFCCC's official closing summary for specific outcomes."
       ],
       "source_urls": [
-        "https://www.reuters.com/sustainability/cop/cop31-climate-deal-balance-after-fractious-talks-2026-11-22/",
-        "https://apnews.com/article/climate-un-turkey-fossil-fuels-global-warming-f6e36c4caf13ec6fed57c9f077cbd067",
-        "https://www.theguardian.com/environment/2026/nov/22/cop31-climate-talks-set-to-end-in-deep-division-as-key-deal-rejected",
-        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334571&lang=1&reg=3",
-        "https://unfccc.int/cop31"
-      ],
-      "draft_commit": "78265ed86741db925a0f558b6c36afdbbe6ec8f7",
-      "word_count": 478,
-      "draft_revision": "Trimmed to the 250–500-word brief target."
+        "https://unfccc.int/news/cop31-delivers-progress-that-advances-implementation-of-the-paris-agreement-but-stalls-on-range-of",
+        "https://www.reuters.com/sustainability/cop/cop31-climate-talks-close-final-deal-says-summit-president-2026-11-21/",
+        "https://www.reuters.com/sustainability/cop/turkeys-erdogan-says-cop31-laid-groundwork-for-more-climate-talks-despite-lack-deal-2026-11-23/",
+        "https://apnews.com/article/f6e36c4caf13ec6fed57c9f077cbd067",
+        "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2334571&lang=1&reg=3"
+      ]
     },
+    "monitoring_candidates": [
+      {
+        "headline": "Udaipur's Balicha dumping yard: fire reports, legacy waste and the 2026 dumpsite rules",
+        "desk": "Earth",
+        "status": "monitoring_only",
+        "why_it_matters": "Local residents have reported smoke and protests; a 2023 NGT-linked inspection documented legacy waste and segregation issues; the 2026 rules set out dumpsite fire-prevention duties.",
+        "verification_gaps": [
+          "No current official Udaipur Municipal Corporation or Rajasthan State Pollution Control Board status report for the October-November 2026 fire was located.",
+          "Local reports' AQI, water-use, active-fire and affected-household figures need underlying official records or independently validated measurements.",
+          "No response from the municipal corporation or pollution control board was located for this run."
+        ],
+        "source_urls": [
+          "https://udaipurmirror.com/udaipur-news/udaipur-balicha-dumping-yard-fire-water-consumption-investigation/",
+          "https://udaipurmirror.com/udaipur-news/udaipur-balicha-dumping-yard-smoke-crisis-mayor-confronted/",
+          "https://stvnewsrajasthan.com/udaipur-balicha-dumping-yard-protest-smoke-smell/",
+          "https://www.swm.cpcb.gov.in/"
+        ]
+      },
+      {
+        "headline": "Supreme Court's Yamuna order shifts attention from infrastructure announcements to measurable accountability",
+        "desk": "Earth / India & World Briefs",
+        "status": "research_ready_monitoring",
+        "why_it_matters": "The 4 November 2026 Supreme Court order directs CPCB to track river and drain water quality at state, UT and district boundaries, proposes penalties for deterioration, and requires live plant data and surprise sampling.",
+        "verification_gaps": [
+          "The CPCB's proposed penalty formula and subsequent compliance data were not located in this run.",
+          "The matter is listed for 13 January 2027; any intervening order should be checked before publication."
+        ],
+        "source_urls": [
+          "https://api.sci.gov.in/supremecourt/2022/34600/34600_2022_9_301_76011_Order_04-Nov-2026.pdf",
+          "https://indianexpress.com/article/legal-news/supreme-court-yamuna-pollution-order-10965723/lite/",
+          "https://www.hindustantimes.com/india-news/pollution-in-yamuna-increased-despite-huge-expenditure-on-cleaning-supreme-court-101794832111722-amp.html",
+          "https://www.downtoearth.org.in/waste/daily-court-digest-major-environment-orders-november-18-2026"
+        ]
+      }
+    ],
     "metricool": {
       "brand_id": 8031691,
       "timezone": "Asia/Calcutta",
-      "scheduled_posts_found_for_2026_11_22_to_2026_11_27": 0,
+      "scheduled_posts_found_for_2026_11_24_to_2026_11_27": 0,
       "networks": {
-        "facebook": {
-          "connected": true,
-          "status": "not_scheduled",
-          "reason": "48-hour publication gate"
-        },
-        "instagram": {
-          "connected": true,
-          "status": "not_scheduled",
-          "reason": "48-hour publication gate; image or video asset required"
-        },
         "linkedin": {
-          "connected": true,
+          "identifier_present": true,
+          "identifier": "urn:li:organization:144129953",
           "status": "not_scheduled",
           "reason": "48-hour publication gate"
         },
         "youtube": {
-          "connected": true,
+          "identifier_present": true,
+          "identifier": "UCA_5tIT2NLC1st8cbwR20Ew",
           "status": "not_scheduled",
           "reason": "No finished video asset; article or thumbnail alone is not a video"
         },
+        "facebook": {
+          "identifier_present": true,
+          "identifier": "123790704038305",
+          "status": "not_scheduled",
+          "reason": "48-hour publication gate; connection exposed in current brand settings"
+        },
+        "instagram": {
+          "identifier_present": true,
+          "identifier": "inowbitdotcom",
+          "status": "not_scheduled",
+          "reason": "48-hour publication gate; verify that this is the intended Vridhi account before future publishing; image or video asset required"
+        },
         "x": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         },
         "threads": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         },
         "pinterest": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         },
         "tiktok": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         },
         "bluesky": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         },
         "google_business_profile": {
-          "connected": false,
-          "status": "not_connected"
+          "identifier_present": false,
+          "status": "not_connected_in_current_brand_settings"
         }
       }
     },
-    "monitoring_candidates": [
-      {
-        "headline": "India–Bangladesh Ganga Water Treaty approaches its 12 December 2026 expiry",
-        "status": "monitoring_only",
-        "why_it_matters": "A 30-year transboundary water-sharing agreement is nearing expiry while the Joint Rivers Commission's 22–23 November meeting is under way in Dhaka. This has direct implications for dry-season flows, agriculture, river diplomacy and communities on both sides.",
-        "confirmed_from_primary_sources": [
-          "Bangladesh Joint Rivers Commission page says the 1996 treaty runs for 30 years, is implemented January–May, and expires in 2026.",
-          "The treaty text hosted by India's Department of Water Resources says Article XII makes renewal subject to mutual consent."
-        ],
-        "verification_gaps": [
-          "No official post-meeting readout or jointly agreed outcome from the 22–23 November Joint Committee meeting was found at the time checked.",
-          "Claims that the current meeting lacks a mandate to negotiate renewal are reported by news outlets and should remain attributed until an official agenda or statement confirms them.",
-          "Do not imply that the treaty has lapsed or that either government has decided not to renew it; the expiry date is 12 December 2026."
-        ],
-        "source_urls": [
-          "https://jrcb.portal.gov.bd/pages/static-pages/6922dcbc933eb65569e11bdc",
-          "https://mowr.nic.in/core/WebsiteUpload/2023/2023011877.pdf",
-          "https://www.tbsnews.net/foreign-policy/dhaka-delhi-discuss-water-issues-sunday-1610011",
-          "https://timesofindia.indiatimes.com/india/indian-team-leaves-for-bangladesh-for-talks-on-ganga-water/articleshow/136041808.cms",
-          "https://www.thedailystar.net/news/bangladesh/news/ganges-treaty-expiring-dec-12-dhaka-still-waiting-delhi-come-the-table-4326771",
-          "https://theprint.in/diplomacy/exclusive-clock-ticking-on-ganga-water-treaty-indian-delegation-heads-to-dhaka-but-renewal-not-on-agenda/3101531/"
-        ]
-      }
-    ]
+    "technical_audit": {
+      "ga4": "gtag.js measurement ID G-KP51276K9G is directly installed in homepage and Journal HTML",
+      "google_tag_manager": "GTM container not detected in homepage or Journal HTML; GA4 is not yet managed through GTM",
+      "publication_log": "Previously stale after 22 November; updated in this run",
+      "public_deployment": "Homepage, Explore listing and Kathmandu collection verified live; exact first deployment timestamp unavailable"
+    }
   }
 }
