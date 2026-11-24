@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-11-24T13:51:37Z",
+  "last_updated": "2026-11-24T13:52:30Z",
   "timezone": "Asia/Kolkata",
   "branch": "foundation/vridhi-umbrella",
   "latest_successful_publication": {
@@ -86,6 +86,21 @@
           "https://indianexpress.com/article/legal-news/supreme-court-yamuna-pollution-order-10965723/lite/",
           "https://www.hindustantimes.com/india-news/pollution-in-yamuna-increased-despite-huge-expenditure-on-cleaning-supreme-court-101794832111722-amp.html",
           "https://www.downtoearth.org.in/waste/daily-court-digest-major-environment-orders-november-18-2026"
+        ]
+      },
+      {
+        "headline": "A 150-kilometre sea channel and a deep genetic divide in Andaman and Nicobar's climbing palm",
+        "desk": "Discover / Earth / Science",
+        "status": "strong_evergreen_candidate; research lead verified against peer-reviewed study",
+        "why_it_matters": "A peer-reviewed Journal of Biogeography study of Korthalsia laciniosa sampled 13 populations using nuclear and chloroplast microsatellite markers. It found deep genetic divergence between the Andaman and Nicobar groups and identified distinct Nicobar and Little Andaman populations as conservation priorities.",
+        "verification_gaps": [
+          "Mongabay India's 24 November feature page was not accessible to the crawler; its listing and title are visible on the publisher's homepage.",
+          "The underlying peer-reviewed study was first published on 8 August 2026, so the article should be framed as a newly surfaced story about existing research, not a new scientific discovery announced on 24 November.",
+          "A full draft should explain that the genetic patterns reflect both Last Glacial Maximum history and present-day isolation; avoid reducing the result to the Ten Degree Channel alone."
+        ],
+        "source_urls": [
+          "https://india.mongabay.com/2026/11/a-climbing-palms-genetics-reveals-evolutionary-secrets/",
+          "https://onlinelibrary.wiley.com/doi/full/10.1111/jbi.70326"
         ]
       }
     ],
