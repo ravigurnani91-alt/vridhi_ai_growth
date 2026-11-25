@@ -452,3 +452,21 @@ loadVridhiBreakingTicker();
     }
   }, true);
 })();
+
+
+// Homepage editorial feed: article cards are rendered from the central article index.
+(function () {
+  const grid = document.getElementById('live-article-grid');
+  if (!grid) return;
+  fetch('articles.json', { cache: 'no-cache' })
+    .then(response => { if (!response.ok) throw new Error('Article index unavailable'); return response.json(); })
+    .then(data => {
+      const articles = Array.isArray(data.articles) ? data.articles : [];
+      if (!articles.length) { grid.innerHTML = '<p class="article-feed-status">New stories will appear here soon.</p>'; return; }
+      grid.innerHTML = articles.slice(0, 9).map(article => {
+        const safe = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+        return '<article class="live-article-card"><a class="live-article-image" href="' + safe(article.url) + '"><img loading="lazy" src="' + safe(article.image) + '" alt="' + safe(article.title) + '"></a><div class="live-article-copy"><div class="live-article-meta"><span>' + safe(article.section) + '</span><span>' + safe(article.topic) + '</span></div><h3><a href="' + safe(article.url) + '">' + safe(article.title) + '</a></h3><p>' + safe(article.description) + '</p><a class="live-article-read" href="' + safe(article.url) + '">READ STORY ↗</a></div></article>';
+      }).join('');
+    })
+    .catch(() => { grid.innerHTML = '<p class="article-feed-status">Stories are temporarily unavailable. Please try again shortly.</p>'; });
+})();
