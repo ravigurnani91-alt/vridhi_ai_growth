@@ -461,7 +461,7 @@ loadVridhiBreakingTicker();
   fetch('articles.json', { cache: 'no-cache' })
     .then(response => { if (!response.ok) throw new Error('Article index unavailable'); return response.json(); })
     .then(data => {
-      const articles = Array.isArray(data.articles) ? data.articles : [];
+      const articles = (Array.isArray(data.articles) ? data.articles : []).filter(article => article.url !== 'journal/kashmir-satisar-legend/');
       if (!articles.length) { grid.innerHTML = '<p class="article-feed-status">New stories will appear here soon.</p>'; return; }
       grid.innerHTML = articles.slice(0, 9).map(article => {
         const safe = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
