@@ -1,142 +1,186 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-11-25",
   "articles": [
     {
-      "title": "India’s Waste Rules Changed in 2026. Will Cities Change With Them?",
-      "description": "What the new rules mean for segregation, collection, processing and the future of city waste systems.",
-      "section": "Earth",
-      "url": "journal/india-solid-waste-rules-2026/",
-      "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85",
-      "topic": "Waste"
+      "title": "Thiruparankundram: 2,000 Years on One Hill",
+      "description": "A visual historical timeline of the layered Jain, Hindu and Islamic heritage of Thiruparankundram, Madurai, including archaeological evidence, literature, inscriptions, legal records and the Deepathoon dispute.",
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Thirupparankundram_Dargah_on_top_of_the_Hills.jpg?width=1600",
+      "published": "2026-11-25",
+      "modified": "2026-11-25",
+      "url": "originals/history/thiruparankundram-history-timeline/",
+      "section": "Originals",
+      "topic": "Research"
     },
     {
-      "title": "Was Kashmir Once a Giant Lake? The Satisar Legend & the Evidence",
-      "description": "An ancient story, the geology of the valley and the traces of people who lived here thousands of years ago.",
+      "title": "Was Kashmir Once a Giant Lake?",
+      "description": "A story-led journey through Kashmir's Satisar legend, the valley's geological past and the people who lived at Burzahom around 5,000 years ago.",
       "section": "Originals",
       "url": "journal/kashmir-satisar-legend/",
-      "image": "https://images.pexels.com/photos/6738438/pexels-photo-6738438.jpeg?auto=compress&cs=tinysrgb&w=900",
-      "topic": "Kashmir"
-    },
-    {
-      "title": "Water Scarcity Is Not Just About Rainfall. It Is About the Whole System",
-      "description": "Storage, groundwater, demand, leakage and access all shape whether water reaches people.",
-      "section": "Earth",
-      "url": "journal/why-water-scarcity-is-not-only-rainfall/",
-      "image": "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=900&q=85",
-      "topic": "Water"
-    },
-    {
-      "title": "After the Bin: Where Does a City's Waste Actually Go?",
-      "description": "Follow everyday waste from collection to sorting, recycling, processing and disposal.",
-      "section": "Earth",
-      "url": "journal/where-city-waste-goes/",
-      "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85",
-      "topic": "Cities"
-    },
-    {
-      "title": "Jantar Mantar Jaipur: When Astronomy Became Architecture",
-      "description": "How Sawai Jai Singh II turned astronomical observation into monumental instruments.",
-      "section": "Discover",
-      "url": "journal/jantar-mantar-jaipur-astronomy-architecture/",
-      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "image": "https://images.pexels.com/photos/6738438/pexels-photo-6738438.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "topic": "Kashmir",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "The Burial That Left Archaeologists With More Questions",
-      "description": "A remarkable Neolithic burial at Burzahom—and what the archaeological evidence can really tell us.",
+      "description": "A Neolithic site in Kashmir produced human burials, evidence of skull surgery and a remarkable burial of five wild dogs. What can the finds really tell us?",
       "section": "Discover",
       "url": "journal/burzahom-burials-five-wild-dogs/",
       "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=85",
-      "topic": "Archaeology"
+      "topic": "Archaeology",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "The People Who Built Their Homes Underground",
-      "description": "Inside Neolithic Burzahom, where families adapted to Kashmir's harsh seasons.",
+      "description": "Inside Burzahom, where Neolithic families dug homes into the earth, made tools from bone and stone, and adapted to Kashmir's harsh seasons.",
       "section": "Discover",
       "url": "journal/burzahom-life-underground-5000-years-ago/",
       "image": "https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?auto=format&fit=crop&w=900&q=85",
-      "topic": "Archaeology"
+      "topic": "Archaeology",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "When Giant Stones Rose in Kashmir",
-      "description": "Explore Kashmir's megalithic remains and evidence of wider ancient connections.",
+      "description": "After the pit-dwelling world of Burzahom, huge standing stones marked a new chapter. Explore Kashmir's megalithic remains and evidence of wider connections.",
       "section": "Discover",
       "url": "journal/ancient-kashmir-megaliths-mountain-connections/",
       "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "topic": "History",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "The Man Who Tried to Record Kashmir's Entire Past",
-      "description": "Meet Kalhana, the 12th-century chronicler behind the Rajatarangini.",
+      "description": "In the 12th century, Kalhana wrote the Rajatarangini, a chronicle of Kashmir's kings. Discover his sources, his method and where legend meets history.",
       "section": "Discover",
       "url": "journal/kalhana-rajatarangini-kashmir-history/",
       "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "topic": "History",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "Who Were the Nagas of Ancient Kashmir?",
-      "description": "Follow ancient texts, place traditions and the questions historians can—and cannot—answer.",
+      "description": "Were Kashmir's Nagas serpents, human communities or sacred guardians? Follow the Nilamata Purana, ancient place traditions and what scholars can—and cannot—say.",
       "section": "Discover",
       "url": "journal/kashmir-nagas-who-were-they/",
       "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85",
-      "topic": "Beliefs"
+      "topic": "Beliefs",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "When Ashoka's World Reached Kashmir",
-      "description": "Explore the traditions connecting Ashoka, Srinagari and the spread of Buddhism.",
+      "description": "Kashmir's traditions connect Ashoka with Srinagari and Buddhism. Explore the story while separating later chronicles, Buddhist memory and archaeological evidence.",
       "section": "Discover",
       "url": "journal/ashoka-mauryan-kashmir-buddhism/",
       "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "topic": "History",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "Kanishka, Buddhist Scholars and the Kashmir Connection",
-      "description": "The Kushan age connected Kashmir to a wider world of trade, learning and ideas.",
+      "description": "The Kushan age connected Kashmir to a vast world of trade and ideas. Explore Kanishka, Buddhist learning and the debated Fourth Buddhist Council.",
       "section": "Discover",
       "url": "journal/kanishka-kushan-kashmir-buddhist-learning/",
       "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "topic": "History",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "The King Who Built a Sun Temple in the Mountains",
-      "description": "Lalitaditya, the Karkota dynasty and the story of the Martand Sun Temple.",
+      "description": "Lalitaditya, the Karkota dynasty and Martand Sun Temple: the story behind one of Kashmir's most extraordinary surviving monuments.",
       "section": "Discover",
       "url": "journal/lalitaditya-martand-sun-temple-kashmir/",
       "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
-      "topic": "History"
+      "topic": "History",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
       "title": "Kashmir's Thinker Who Changed the Way India Understood Consciousness",
-      "description": "Abhinavagupta's influence on philosophy, aesthetics, theatre and the study of consciousness.",
+      "description": "Meet Abhinavagupta, the Kashmir philosopher whose work shaped Shaiva philosophy, aesthetics, theatre and the study of consciousness.",
       "section": "Discover",
       "url": "journal/abhinavagupta-kashmir-philosophy/",
       "image": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=900&q=85",
-      "topic": "Ideas"
+      "topic": "Ideas",
+      "published": "2026-11-23",
+      "modified": "2026-11-23"
     },
     {
-      "title": "Why Do Villages Become Abandoned?",
-      "description": "From jobs and migration to water stress and conflict, village abandonment rarely has one cause.",
+      "title": "India's Waste Rules Changed in 2026. Will Cities Change With Them?",
+      "description": "A practical explainer on India's Solid Waste Management Rules, 2026 and what they mean for households, bulk generators and local bodies.",
+      "section": "Earth",
+      "url": "journal/india-solid-waste-rules-2026/",
+      "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85",
+      "topic": "Waste",
+      "published": "2026-11-21",
+      "modified": "2026-11-21"
+    },
+    {
+      "title": "Water Scarcity Is Not Just About Rainfall. It Is About the Whole System",
+      "description": "Rainfall matters, but storage, groundwater, demand, leakage, pollution and access determine whether water reaches people.",
+      "section": "Earth",
+      "url": "journal/why-water-scarcity-is-not-only-rainfall/",
+      "image": "https://images.unsplash.com/photo-1437482078695-73f5ca6c96e2?auto=format&fit=crop&w=900&q=85",
+      "topic": "Water",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
+    },
+    {
+      "title": "After the Bin: Where Does a City's Waste Actually Go?",
+      "description": "Follow household waste from collection to sorting, recycling, processing and disposal—and see where the system can fail.",
+      "section": "Earth",
+      "url": "journal/where-city-waste-goes/",
+      "image": "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85",
+      "topic": "Cities",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
+    },
+    {
+      "title": "Jantar Mantar Jaipur: When Astronomy Became Architecture",
+      "description": "Explore how Sawai Jai Singh II turned astronomical observation into monumental instruments at Jaipur's Jantar Mantar, now a UNESCO World Heritage Site.",
+      "section": "Discover",
+      "url": "journal/jantar-mantar-jaipur-astronomy-architecture/",
+      "image": "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85",
+      "topic": "History",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
+    },
+    {
+      "title": "Why Do Villages Become Abandoned? The Forces That Empty a Place",
+      "description": "From jobs and migration to water stress, conflict and changing transport, village abandonment rarely has one cause.",
       "section": "Discover",
       "url": "journal/abandoned-villages-why-people-leave/",
       "image": "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=85",
-      "topic": "Places"
+      "topic": "Places",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
     },
     {
-      "title": "Why Do Lakes Turn Bright Green?",
-      "description": "Understand algal blooms, nutrients, sunlight and the warning signs that matter for freshwater.",
+      "title": "Why Do Lakes Turn Bright Green? The Science Behind an Algal Bloom",
+      "description": "A lake turning green can be a sign of algae or cyanobacteria multiplying rapidly. Understand nutrients, sunlight, water movement and the warning signs that matter.",
       "section": "Earth",
       "url": "journal/why-lakes-turn-green/",
       "image": "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85",
-      "topic": "Water"
+      "topic": "Water",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
     },
     {
       "title": "Why Do Human Societies Create Gods, Myths and Origin Stories?",
-      "description": "Explore how myths help communities explain origins, express values and make sense of uncertainty.",
+      "description": "Myths help communities explain origins, express values, remember places and make sense of uncertainty. Their meanings vary across cultures.",
       "section": "Discover",
       "url": "journal/why-humans-create-myths-and-gods/",
       "image": "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=85",
-      "topic": "Culture"
+      "topic": "Culture",
+      "published": "2026-11-20",
+      "modified": "2026-11-20"
     }
   ]
 }
