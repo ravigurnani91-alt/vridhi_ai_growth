@@ -454,19 +454,176 @@ loadVridhiBreakingTicker();
 })();
 
 
-// Homepage editorial feed: article cards are rendered from the central article index.
+// Homepage feed: one central index, newest first, deduplicated, filterable by Vridhi division.
 (function () {
   const grid = document.getElementById('live-article-grid');
   if (!grid) return;
-  fetch('articles.json', { cache: 'no-cache' })
+  const leadPath = '/journal/kashmir-satisar-legend/';
+  const filters = [...document.querySelectorAll('[data-article-filter]')];
+  const search = document.getElementById('article-feed-search');
+  const topicsNode = document.getElementById('article-feed-topics');
+  let allArticles = [];
+  let activeDivision = 'all';
+  let activeTopic = '';
+
+  const cleanText = value => String(value || '').trim();
+  const safeInternalPath = value => {
+    try {
+      const url = new URL(value, window.location.origin);
+      if (url.origin !== window.location.origin || !url.pathname.startsWith('/')) return null;
+      return url.pathname.endsWith('/') ? url.pathname : url.pathname + '/';
+    } catch (_) { return null; }
+  };
+  const safeImageUrl = value => {
+    try {
+      const url = new URL(value);
+      return url.protocol === 'https:' ? url.href : '';
+    } catch (_) { return ''; }
+  };
+  const formatDate = value => {
+    if (!value) return '';
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
+    return new Intl.DateTimeFormat('en-IN', {day:'numeric', month:'short', year:'numeric', timeZone:'Asia/Kolkata'}).format(date);
+  };
+
+  function renderTopics() {
+    if (!topicsNode) return;
+    const counts = new Map();
+    allArticles.forEach(article => {
+      const topic = cleanText(article.topic);
+      if (topic) counts.set(topic, (counts.get(topic) || 0) + 1);
+    });
+    topicsNode.replaceChildren();
+    if (!counts.size) return;
+    const label = document.createElement('span');
+    label.className = 'article-topics-label';
+    label.textContent = 'EXPLORE TOPICS';
+    topicsNode.appendChild(label);
+    [...counts.entries()].sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0])).slice(0,7).forEach(([topic]) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'article-topic-chip';
+      button.textContent = topic;
+      button.setAttribute('aria-pressed', String(activeTopic === topic));
+      button.addEventListener('click', () => {
+        activeTopic = activeTopic === topic ? '' : topic;
+        renderTopics();
+        render();
+      });
+      topicsNode.appendChild(button);
+    });
+  }
+
+  function render() {
+    const query = cleanText(search?.value).toLowerCase();
+    const visible = allArticles.filter(article => {
+      const divisionMatch = activeDivision === 'all' || article.section === activeDivision;
+      const topicMatch = !activeTopic || cleanText(article.topic) === activeTopic;
+      const text = [article.title, article.description, article.topic, article.section].join(' ').toLowerCase();
+      return divisionMatch && topicMatch && (!query || text.includes(query));
+    }).slice(0, 9);
+
+    grid.replaceChildren();
+    if (!visible.length) {
+      const empty = document.createElement('p');
+      empty.className = 'article-feed-status';
+      empty.textContent = 'No matching stories yet. Try another topic or division.';
+      grid.appendChild(empty);
+      return;
+    }
+    visible.forEach(article => {
+      const card = document.createElement('article');
+      card.className = 'live-article-card';
+      const imageLink = document.createElement('a');
+      imageLink.className = 'live-article-image';
+      imageLink.href = article.path;
+      if (article.image) {
+        const image = document.createElement('img');
+        image.loading = 'lazy';
+        image.alt = article.title;
+        image.src = article.image;
+        imageLink.appendChild(image);
+      }
+
+      const copy = document.createElement('div');
+      copy.className = 'live-article-copy';
+      const meta = document.createElement('div');
+      meta.className = 'live-article-meta';
+      const section = document.createElement('span');
+      section.textContent = article.section;
+      const topic = document.createElement('span');
+      topic.textContent = article.topic;
+      meta.append(section, topic);
+      if (article.published) {
+        const date = document.createElement('time');
+        date.dateTime = article.published;
+        date.textContent = formatDate(article.published);
+        meta.appendChild(date);
+      }
+      const heading = document.createElement('h3');
+      const title = document.createElement('a');
+      title.href = article.path;
+      title.textContent = article.title;
+      heading.appendChild(title);
+      const description = document.createElement('p');
+      description.textContent = article.description;
+      const read = document.createElement('a');
+      read.className = 'live-article-read';
+      read.href = article.path;
+      read.textContent = 'READ STORY ↗';
+      copy.append(meta, heading, description, read);
+      card.append(imageLink, copy);
+      grid.appendChild(card);
+    });
+  }
+
+  filters.forEach(button => button.addEventListener('click', () => {
+    activeDivision = button.dataset.articleFilter || 'all';
+    activeTopic = '';
+    filters.forEach(item => {
+      const selected = item === button;
+      item.classList.toggle('is-active', selected);
+      item.setAttribute('aria-pressed', String(selected));
+    });
+    renderTopics();
+    render();
+  }));
+  search?.addEventListener('input', render);
+
+  fetch('/articles.json', {cache:'no-cache'})
     .then(response => { if (!response.ok) throw new Error('Article index unavailable'); return response.json(); })
     .then(data => {
-      const articles = (Array.isArray(data.articles) ? data.articles : []).filter(article => article.url !== 'journal/kashmir-satisar-legend/');
-      if (!articles.length) { grid.innerHTML = '<p class="article-feed-status">New stories will appear here soon.</p>'; return; }
-      grid.innerHTML = articles.slice(0, 9).map(article => {
-        const safe = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
-        return '<article class="live-article-card"><a class="live-article-image" href="' + safe(article.url) + '"><img loading="lazy" src="' + safe(article.image) + '" alt="' + safe(article.title) + '"></a><div class="live-article-copy"><div class="live-article-meta"><span>' + safe(article.section) + '</span><span>' + safe(article.topic) + '</span></div><h3><a href="' + safe(article.url) + '">' + safe(article.title) + '</a></h3><p>' + safe(article.description) + '</p><a class="live-article-read" href="' + safe(article.url) + '">READ STORY ↗</a></div></article>';
-      }).join('');
+      const source = Array.isArray(data.articles) ? data.articles : [];
+      const seenPaths = new Set();
+      const seenTitles = new Set();
+      allArticles = source.map((article, index) => {
+        const path = safeInternalPath(article.url);
+        const title = cleanText(article.title);
+        if (!path || !title || path === leadPath) return null;
+        const titleKey = title.toLocaleLowerCase().replace(/[^\\p{L}\\p{N}]+/gu, ' ').trim();
+        if (seenPaths.has(path) || seenTitles.has(titleKey)) return null;
+        seenPaths.add(path);
+        seenTitles.add(titleKey);
+        return {
+          ...article,
+          title,
+          path,
+          section: ['Earth','Discover','Originals'].includes(article.section) ? article.section : 'Discover',
+          topic: cleanText(article.topic) || 'Research',
+          description: cleanText(article.description),
+          image: safeImageUrl(article.image),
+          _order: index
+        };
+      }).filter(Boolean).sort((a,b) => {
+        const da = Date.parse(a.published || '') || 0;
+        const db = Date.parse(b.published || '') || 0;
+        return db - da || a._order - b._order;
+      });
+      renderTopics();
+      render();
     })
-    .catch(() => { grid.innerHTML = '<p class="article-feed-status">Stories are temporarily unavailable. Please try again shortly.</p>'; });
+    .catch(() => {
+      grid.textContent = 'Stories are temporarily unavailable. Please try again shortly.';
+    });
 })();
