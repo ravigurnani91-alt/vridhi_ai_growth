@@ -486,6 +486,7 @@ loadVridhiBreakingTicker();
   };
   const editorialOrder = [
     '/journal/vaibhav-sooryavanshi-204-record-innings/',
+    '/discover/intimacy/the-last-table/',
     '/journal/india-groundwater-rajasthan-2025/',
     '/journal/dholavira-water-city/',
     '/originals/aravalli-definition-deadline-2026/',
