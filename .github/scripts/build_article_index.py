@@ -12,6 +12,7 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
 INDEX = ROOT / "articles.json"
+SITEMAP = ROOT / "sitemap.xml"
 BASE = "https://vridhi.ink/"
 ARTICLE_TYPES = {"Article", "NewsArticle", "BlogPosting", "Report"}
 SKIP_PARTS = {"briefs", "archive", "tag", "tags"}
@@ -148,4 +149,38 @@ payload = {
     "articles": result,
 }
 INDEX.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+# Add every indexed article to the XML sitemap without deleting existing URLs.
+import xml.etree.ElementTree as ET
+namespace = "http://www.sitemaps.org/schemas/sitemap/0.9"
+ET.register_namespace("", namespace)
+try:
+    tree = ET.parse(SITEMAP)
+    root = tree.getroot()
+    existing = {
+        (node.text or "").strip()
+        for node in root.findall(f"{{{namespace}}}url/{{{namespace}}}loc")
+    }
+    added = 0
+    for item in result:
+        path = str(item.get("url", "")).lstrip("/")
+        if not path:
+            continue
+        full_url = BASE + path
+        if full_url in existing:
+            continue
+        node = ET.SubElement(root, f"{{{namespace}}}url")
+        ET.SubElement(node, f"{{{namespace}}}loc").text = full_url
+        modified = item.get("modified") or item.get("published")
+        if modified:
+            ET.SubElement(node, f"{{{namespace}}}lastmod").text = str(modified)[:10]
+        ET.SubElement(node, f"{{{namespace}}}changefreq").text = "monthly"
+        ET.SubElement(node, f"{{{namespace}}}priority").text = "0.75"
+        existing.add(full_url)
+        added += 1
+    tree.write(SITEMAP, encoding="utf-8", xml_declaration=True)
+    print(f"Sitemap checked; added {added} article URLs.")
+except (OSError, ET.ParseError) as exc:
+    raise SystemExit(f"Could not safely update sitemap: {exc}")
+
 print(f"Article index rebuilt: {len(result)} unique published articles.")
