@@ -601,7 +601,7 @@ loadVridhiBreakingTicker();
         const path = safeInternalPath(article.url);
         const title = cleanText(article.title);
         if (!path || !title || path === leadPath) return null;
-        const titleKey = title.toLocaleLowerCase().replace(/[^\\p{L}\\p{N}]+/gu, ' ').trim();
+        const titleKey = title.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
         if (seenPaths.has(path) || seenTitles.has(titleKey)) return null;
         seenPaths.add(path);
         seenTitles.add(titleKey);
