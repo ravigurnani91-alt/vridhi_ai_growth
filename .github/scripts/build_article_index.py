@@ -83,17 +83,21 @@ def read_article(path):
     return None
 
 def infer_section(item, path):
-    existing = item.get("section")
-    if existing in {"Earth", "Discover", "Originals"}:
-        return existing
     text = " ".join([
         str(item.get("title", "")), str(item.get("topic", "")),
         str(item.get("articleSection", "")), str(path)
     ]).lower()
     if "/originals/" in "/" + str(path) or "original investigation" in text or "vridhi original" in text:
         return "Originals"
+    # Historical/archaeological subjects take precedence over words such as water
+    # that may appear in the title of a history feature (e.g. Dholavira).
+    if any(word in text for word in ("history", "archaeology", "archaeological", "ancient", "harappan", "dholavira", "civilisation", "civilization", "kashmir", "mauryan", "kushan", "temple", "jantar mantar")):
+        return "Discover"
     if any(word in text for word in ("earth", "environment", "groundwater", "water", "waste", "pollution", "climate", "biodiversity", "lake", "ecology")):
         return "Earth"
+    existing = item.get("section")
+    if existing in {"Earth", "Discover", "Originals"}:
+        return existing
     return "Discover"
 
 def infer_topic(item):
