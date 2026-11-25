@@ -52,6 +52,16 @@
 
 <section class="paper-section live-article-feed" id="latest-articles" aria-labelledby="latest-articles-title">
   <div class="paper-section-head"><div><small>FRESH FROM VRIDHI</small><h2 id="latest-articles-title">Latest stories</h2><p>New reporting, discoveries and original research from across Vridhi.</p></div><span class="feed-section-links"><a href="earth/">EARTH</a> · <a href="discover/">DISCOVER</a> · <a href="originals/">ORIGINALS</a></span></div>
+  <div class="article-feed-tools">
+    <div class="article-feed-filters" role="group" aria-label="Filter stories by division">
+      <button type="button" class="article-filter is-active" data-article-filter="all" aria-pressed="true">ALL</button>
+      <button type="button" class="article-filter" data-article-filter="Earth" aria-pressed="false">EARTH</button>
+      <button type="button" class="article-filter" data-article-filter="Discover" aria-pressed="false">DISCOVER</button>
+      <button type="button" class="article-filter" data-article-filter="Originals" aria-pressed="false">ORIGINALS</button>
+    </div>
+    <label class="article-feed-search"><span>SEARCH STORIES</span><input id="article-feed-search" type="search" placeholder="Search a subject or question…" autocomplete="off"></label>
+  </div>
+  <div class="article-feed-topics" id="article-feed-topics" aria-label="Topics in Vridhi coverage"></div>
   <div class="live-article-grid" id="live-article-grid" aria-live="polite"><p class="article-feed-status">Loading the latest stories…</p></div>
 </section>
 </main>
