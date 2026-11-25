@@ -32,7 +32,7 @@ jobs:
         run: python3 .github/scripts/build_article_index.py
       - name: Commit index when changed
         run: |
-          if git diff --quiet -- articles.json; then
+          if git diff --quiet -- articles.json sitemap.xml; then
             echo "Article index is already current."
             exit 0
           fi
