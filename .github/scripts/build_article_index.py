@@ -95,12 +95,16 @@ def infer_section(item, path):
         return "Discover"
     if any(word in text for word in ("earth", "environment", "groundwater", "water", "waste", "pollution", "climate", "biodiversity", "lake", "ecology")):
         return "Earth"
+    if "discover/intimacy/" in ("/" + str(path).lower() + "/") or "intimacy" in text:
+        return "Discover"
     existing = item.get("section")
     if existing in {"Earth", "Discover", "Originals"}:
         return existing
     return "Discover"
 
 def infer_topic(item):
+    if "intimacy" in str(item.get("articleSection", "")).lower() or "intimacy" in str(item.get("url", "")).lower():
+        return "Intimacy"
     if item.get("topic"):
         return item["topic"]
     keywords = item.get("keywords") or []
@@ -120,7 +124,7 @@ for item in items:
 
 # Scan only published article pages. Collection/landing pages without Article
 # JSON-LD are ignored automatically.
-for folder in ("journal", "originals"):
+for folder in ("journal", "originals", "discover/intimacy"):
     base = ROOT / folder
     if not base.exists():
         continue
