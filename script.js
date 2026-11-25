@@ -411,6 +411,15 @@ loadVridhiBreakingTicker();
       : null;
     if (!target || target.hasAttribute('data-no-analytics') || target.disabled) return;
 
+    if (target.matches('.nav-search, [aria-label*="search" i], [data-search-open]')) {
+      send('search_open');
+    }
+    if (target.tagName === 'BUTTON' || target.getAttribute('role') === 'button') {
+      send('ui_interaction', {
+        element_id: String(target.id || 'unlabelled').slice(0, 60),
+        component_type: target.classList.contains('nav-search') ? 'search_control' : 'button'
+      });
+    }
     if (target.hasAttribute('data-follow-topic')) {
       send('topic_follow', { topic: String(target.dataset.followTopic || 'unknown').slice(0, 60) });
     }
