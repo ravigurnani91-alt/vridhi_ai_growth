@@ -92,7 +92,7 @@ def infer_section(item, path):
     ]).lower()
     if "/originals/" in "/" + str(path) or "original investigation" in text or "vridhi original" in text:
         return "Originals"
-    if any(word in text for word in ("environment", "groundwater", "water", "waste", "pollution", "climate", "biodiversity", "lake", "ecology")):
+    if any(word in text for word in ("earth", "environment", "groundwater", "water", "waste", "pollution", "climate", "biodiversity", "lake", "ecology")):
         return "Earth"
     return "Discover"
 
