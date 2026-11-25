@@ -19,7 +19,9 @@
       "modified": "2026-11-25",
       "url": "journal/dholavira-water-city/",
       "section": "Discover",
-      "topic": "Dholavira"
+      "topic": "Dholavira",
+      "image": "https://indianbookofrecords.com/demo/topimages/54tc5c1908116280.png",
+      "imageAlt": "Stone-built reservoir at the Dholavira Harappan site"
     },
     {
       "title": "India extracts 60% of its groundwater. Rajasthan extracts 133% of its annual recharge.",
@@ -28,7 +30,9 @@
       "modified": "2026-11-25",
       "url": "journal/india-groundwater-rajasthan-2025/",
       "section": "Earth",
-      "topic": "India groundwater crisis"
+      "topic": "India groundwater crisis",
+      "image": "https://c.ndtvimg.com/2025-08/05n4pu9o_4_625x300_18_August_25.jpg?im=FitAndFill%2Calgorithm%3Ddnn%2Cwidth%3D1200%2Cheight%3D675",
+      "imageAlt": "Agricultural fields and farm pond in Rajasthan"
     },
     {
       "title": "The Aravallis are more than hills. The Supreme Court's definition deadline is now days away.",
@@ -37,7 +41,9 @@
       "modified": "2026-11-25",
       "url": "originals/aravalli-definition-deadline-2026/",
       "section": "Originals",
-      "topic": "Aravalli hills definition"
+      "topic": "Aravalli hills definition",
+      "image": "https://wanderon-images.gumlet.io/gallery/new/2025/11/17/1763377028778-hill-stations-in-rajasthan.jpg",
+      "imageAlt": "Green ridgelines of the Aravalli landscape in Rajasthan"
     },
     {
       "title": "A 15-year-old hit 28 sixes. Now Indian cricket has a different problem.",
@@ -46,7 +52,9 @@
       "modified": "2026-11-25",
       "url": "journal/vaibhav-sooryavanshi-204-record-innings/",
       "section": "Discover",
-      "topic": "Vaibhav Sooryavanshi"
+      "topic": "Vaibhav Sooryavanshi",
+      "image": "https://c.ndtvimg.com/2025-12/t1q173j8_vaibhav-suryavanshi-bcci_625x300_12_December_25.jpg?im=FeatureCrop%2Calgorithm%3Ddnn%2Cwidth%3D1200%2Cheight%3D738",
+      "imageAlt": "Vaibhav Sooryavanshi batting for India"
     },
     {
       "title": "Was Kashmir Once a Giant Lake? The Satisar Legend & the Evidence",
