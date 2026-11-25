@@ -57,6 +57,46 @@
       "imageAlt": "Vaibhav Sooryavanshi batting for India"
     },
     {
+      "title": "The Last Table by the Window",
+      "description": "An original sensual short story for adults.",
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85",
+      "published": "2026-11-25",
+      "modified": "2026-11-25",
+      "url": "discover/intimacy/the-last-table/",
+      "section": "Discover",
+      "topic": "Intimacy"
+    },
+    {
+      "title": "The Elevator Stopped at 11:47",
+      "description": "Two neighbours, one late lift and a conversation neither had planned to have. An original adult short story.",
+      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=85",
+      "published": "2026-11-25",
+      "modified": "2026-11-25",
+      "url": "discover/intimacy/the-elevator-at-1147/",
+      "section": "Discover",
+      "topic": "Intimacy"
+    },
+    {
+      "title": "The Voice Note She Never Sent",
+      "description": "A seventeen-second confession, six replays and one message that might change everything.",
+      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=85",
+      "published": "2026-11-25",
+      "modified": "2026-11-25",
+      "url": "discover/intimacy/the-voice-note/",
+      "section": "Discover",
+      "topic": "Intimacy"
+    },
+    {
+      "title": "The Elevator Stopped at 11:47",
+      "description": "Two neighbours. One late lift. And a conversation neither had planned to have.",
+      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=85",
+      "published": "2026-11-25",
+      "modified": "2026-11-25",
+      "url": "discover/intimacy/the-elevator-at-11-47/",
+      "section": "Discover",
+      "topic": "Intimacy"
+    },
+    {
       "title": "Was Kashmir Once a Giant Lake? The Satisar Legend & the Evidence",
       "description": "A story-led journey through Kashmir's Satisar legend, the valley's geological past and the people who lived at Burzahom around 5,000 years ago.",
       "section": "Discover",
@@ -225,36 +265,6 @@
       "topic": "Culture",
       "published": "2026-11-20",
       "modified": "2026-11-20"
-    },
-    {
-      "title": "The Last Table by the Window",
-      "description": "A chance meeting, a rain-soaked evening and the kind of chemistry that makes a city disappear. An original adult short story.",
-      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=85",
-      "published": "2026-11-25",
-      "modified": "2026-11-25",
-      "url": "discover/intimacy/the-last-table/",
-      "section": "Discover",
-      "topic": "Intimacy"
-    },
-    {
-      "title": "The Elevator Stopped at 11:47",
-      "description": "Two neighbours, one late lift and a conversation neither had planned to have. An original adult short story.",
-      "image": "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=85",
-      "published": "2026-11-25",
-      "modified": "2026-11-25",
-      "url": "discover/intimacy/the-elevator-at-1147/",
-      "section": "Discover",
-      "topic": "Intimacy"
-    },
-    {
-      "title": "The Voice Note She Never Sent",
-      "description": "A seventeen-second confession, six replays and one message that might change everything. An original adult short story.",
-      "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1400&q=85",
-      "published": "2026-11-25",
-      "modified": "2026-11-25",
-      "url": "discover/intimacy/the-voice-note/",
-      "section": "Discover",
-      "topic": "Intimacy"
     }
   ]
 }
