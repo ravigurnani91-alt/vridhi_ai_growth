@@ -454,6 +454,23 @@ loadVridhiBreakingTicker();
 })();
 
 
+// Latest-headlines banner strip, populated from the same verified article index.
+(function () {
+  const strip = document.querySelector('#homepage-headline-strip .headline-strip-items');
+  if (!strip) return;
+  fetch('/articles.json',{cache:'no-cache'}).then(r=>r.json()).then(data=>{
+    const items=(Array.isArray(data.articles)?data.articles:[]).slice(0,8);
+    strip.replaceChildren();
+    items.forEach(a=>{
+      const link=document.createElement('a');
+      const raw=String(a.url||'');
+      link.href=raw.startsWith('/')?raw:'/'+raw.replace(/^\/+/, '');
+      link.textContent=a.title;
+      strip.appendChild(link);
+    });
+  }).catch(()=>{strip.textContent='Explore the latest stories across Vridhi';});
+})();
+
 // Dynamic multi-story front page. Editorial priority keeps the homepage broad, not locked to one topic.
 (function () {
   const root = document.getElementById('front-page-grid');
