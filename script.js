@@ -454,11 +454,89 @@ loadVridhiBreakingTicker();
 })();
 
 
+// Dynamic multi-story front page. Editorial priority keeps the homepage broad, not locked to one topic.
+(function () {
+  const root = document.getElementById('front-page-grid');
+  if (!root) return;
+  const clean = value => String(value || '').trim();
+  const safePath = value => {
+    try { const u = new URL(value, location.origin); return u.origin === location.origin ? u.pathname.replace(/\/?$/, '/') : ''; }
+    catch (_) { return ''; }
+  };
+  const safeImage = value => {
+    try { const u = new URL(value); return u.protocol === 'https:' ? u.href : ''; }
+    catch (_) { return ''; }
+  };
+  const editorialOrder = [
+    '/journal/vaibhav-sooryavanshi-204-record-innings/',
+    '/journal/india-groundwater-rajasthan-2025/',
+    '/journal/dholavira-water-city/',
+    '/originals/aravalli-definition-deadline-2026/',
+    '/originals/history/thiruparankundram-history-timeline/'
+  ];
+  const artClass = section => section === 'Earth' ? 'earth-art' : section === 'Originals' ? 'originals-art' : 'discover-art';
+  function card(article, kind) {
+    const el = document.createElement('article');
+    el.className = 'front-story front-' + kind;
+    const link = document.createElement('a');
+    link.className = 'front-story-visual ' + (article.image ? 'has-image' : artClass(article.section));
+    link.href = article.path;
+    if (article.image) {
+      const img = document.createElement('img');
+      img.src = article.image; img.alt = ''; img.loading = 'lazy';
+      link.appendChild(img);
+    } else {
+      const mark = document.createElement('span');
+      mark.className = 'front-visual-mark';
+      mark.textContent = article.section === 'Earth' ? 'E' : article.section === 'Originals' ? 'V' : 'D';
+      link.appendChild(mark);
+    }
+    const copy = document.createElement('div');
+    copy.className = 'front-story-copy';
+    const meta = document.createElement('div');
+    meta.className = 'front-story-meta';
+    meta.textContent = article.section + '  /  ' + article.topic;
+    const title = document.createElement('a');
+    title.className = 'front-story-title'; title.href = article.path; title.textContent = article.title;
+    const desc = document.createElement('p'); desc.textContent = article.description;
+    copy.append(meta,title,desc);
+    el.append(link,copy);
+    return el;
+  }
+  fetch('/articles.json',{cache:'no-cache'}).then(r=>{if(!r.ok)throw new Error('index unavailable');return r.json();}).then(data=>{
+    const seen=new Set();
+    const all=(Array.isArray(data.articles)?data.articles:[]).map((a,i)=>({
+      ...a,path:safePath(a.url),image:safeImage(a.image),section:['Earth','Discover','Originals'].includes(a.section)?a.section:'Discover',
+      topic:clean(a.topic)||'Research',title:clean(a.title),description:clean(a.description),_i:i
+    })).filter(a=>a.path&&a.title&&!seen.has(a.path)&&seen.add(a.path));
+    const byPath=new Map(all.map(a=>[a.path,a]));
+    const featured=editorialOrder.map(p=>byPath.get(p)).filter(Boolean);
+    const used=new Set(featured.map(a=>a.path));
+    const recent=all.filter(a=>!used.has(a.path)).sort((a,b)=>(Date.parse(b.published||'')||0)-(Date.parse(a.published||'')||0)||a._i-b._i);
+    const lead=featured[0]||recent.shift();
+    const side=[...featured.slice(1),...recent].filter(a=>a&&a.path!==lead?.path).slice(0,4);
+    if(!lead){root.textContent='New stories are on their way.';return;}
+    root.replaceChildren();
+    const leadCard=card(lead,'lead');
+    const sideWrap=document.createElement('div');sideWrap.className='front-side-stories';
+    side.forEach(a=>sideWrap.appendChild(card(a,'side')));
+    const rail=document.createElement('aside');rail.className='front-latest-rail';
+    const railHead=document.createElement('h2');railHead.textContent='MORE TO EXPLORE';
+    rail.appendChild(railHead);
+    [...featured.slice(0,0),...recent].slice(0,6).forEach(a=>{
+      const item=document.createElement('a');item.href=a.path;item.className='front-rail-item';
+      const label=document.createElement('small');label.textContent=a.section+' · '+a.topic;
+      const title=document.createElement('span');title.textContent=a.title;
+      item.append(label,title);rail.appendChild(item);
+    });
+    root.append(leadCard,sideWrap,rail);
+  }).catch(()=>{root.textContent='Stories are temporarily unavailable.';});
+})();
+
 // Homepage feed: one central index, newest first, deduplicated, filterable by Vridhi division.
 (function () {
   const grid = document.getElementById('live-article-grid');
   if (!grid) return;
-  const leadPath = '/journal/kashmir-satisar-legend/';
   const filters = [...document.querySelectorAll('[data-article-filter]')];
   const search = document.getElementById('article-feed-search');
   const topicsNode = document.getElementById('article-feed-topics');
@@ -517,12 +595,30 @@ loadVridhiBreakingTicker();
 
   function render() {
     const query = cleanText(search?.value).toLowerCase();
-    const visible = allArticles.filter(article => {
+    const matches = allArticles.filter(article => {
       const divisionMatch = activeDivision === 'all' || article.section === activeDivision;
       const topicMatch = !activeTopic || cleanText(article.topic) === activeTopic;
       const text = [article.title, article.description, article.topic, article.section].join(' ').toLowerCase();
       return divisionMatch && topicMatch && (!query || text.includes(query));
-    }).slice(0, 9);
+    });
+    let visible = matches.slice(0, 9);
+    if (activeDivision === 'all' && !activeTopic && !query) {
+      const chosen = [], usedTopics = new Set(), sectionCounts = {Earth:0, Discover:0, Originals:0};
+      const sectionLimits = {Earth:3, Discover:4, Originals:2};
+      for (const article of matches) {
+        if (chosen.length >= 9) break;
+        if (!usedTopics.has(article.topic) && sectionCounts[article.section] < sectionLimits[article.section]) {
+          chosen.push(article); usedTopics.add(article.topic); sectionCounts[article.section]++;
+        }
+      }
+      for (const article of matches) {
+        if (chosen.length >= 9) break;
+        if (!chosen.includes(article) && sectionCounts[article.section] < sectionLimits[article.section]) {
+          chosen.push(article); sectionCounts[article.section]++;
+        }
+      }
+      visible = chosen;
+    }
 
     grid.replaceChildren();
     if (!visible.length) {
@@ -600,7 +696,7 @@ loadVridhiBreakingTicker();
       allArticles = source.map((article, index) => {
         const path = safeInternalPath(article.url);
         const title = cleanText(article.title);
-        if (!path || !title || path === leadPath) return null;
+        if (!path || !title) return null;
         const titleKey = title.toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
         if (seenPaths.has(path) || seenTitles.has(titleKey)) return null;
         seenPaths.add(path);
