@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T08:06:45.033445+00:00",
+  "updated": "2026-11-25T08:16:12.278825+00:00",
   "editorial_note": "Publisher headlines and short excerpts. Open the source link for the full report.",
   "items": [
     {
@@ -7,8 +7,16 @@
       "url": "https://www.bbc.co.uk/news/articles/cm20qnq33e90o?at_medium=RSS&at_campaign=rss",
       "source": "BBC Business",
       "category": "BUSINESS",
-      "published": "2026-11-25T07:34:20+00:00",
+      "published": "2026-11-25T08:10:56+00:00",
       "summary": "A household using a typical amount of energy would see its annual bill rise from £1,723 to £2,166 if this level was sustained for a year."
+    },
+    {
+      "title": "Zimbabwe issues arrest warrant for Robert Mugabe's son over missed court date",
+      "url": "https://www.bbc.co.uk/news/articles/c6d917jn5gq7o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC World",
+      "category": "WORLD",
+      "published": "2026-11-25T07:26:54+00:00",
+      "summary": "The son of Zimbabwe's late former President Robert Mugabe has faced multiple legal troubles in the recent past."
     },
     {
       "title": "Kilmar Ábrego García leaves US for Spain, ending Trump deportation battle",
@@ -313,14 +321,6 @@
       "category": "SCIENCE & SPACE",
       "published": "2026-11-24T18:55:42+00:00",
       "summary": "American Geophysical Union (AGU) 2026 Join NASA in the Exhibit Hall (Booth #525) for Hyperwall Storytelling by NASA experts. Full Hyperwall Agenda below. TUESDAY, NOVEMBER 17 10:30 AMHigh Resolution Hydrology Simulations and Agentic Super Intelligence Interfaces for Mapping Water Availability and ExtremesSujay Kumar11:00 AMScale-Resolving CFD Methods for Pre"
-    },
-    {
-      "title": "Faisal Islam: Fears over the AI boom haven't gone away",
-      "url": "https://www.bbc.co.uk/news/articles/c6894evgpel5o?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Business",
-      "category": "BUSINESS",
-      "published": "2026-11-24T18:21:43+00:00",
-      "summary": "There were legitimate fears before Huang's abrupt exit from Nvidia - and his return won't fix it"
     }
   ],
   "source_errors": []
