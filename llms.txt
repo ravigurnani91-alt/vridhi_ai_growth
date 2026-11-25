@@ -61,24 +61,3 @@ https://vridhi.ink/sitemap.xml
 ## Current implementation note
 
 Vridhi is an evolving static website. A page's presence in this guide does not imply that a complete article library, live data feed, automated publishing system or all planned features are already operational.
-
-
-## Vridhi Explore — Kathmandu, Beyond the Postcards
-
-- Collection: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/ — a ten-story collection about overlooked places, living heritage, sacred landscapes and practical visitor context across the Kathmandu Valley, Nepal.
-- Itum Bahal: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/itum-bahal-kathmandu-hidden-courtyard/
-- Pharping and Asura Cave: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/pharping-asura-cave-padmasambhava/
-- Adinath Lokeshwar, Chobhar: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/adinath-lokeshwar-chobhar-temple/
-- Kirtipur Old Town: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/kirtipur-old-town-nepal/
-- Vajrayogini and Sankhu: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/vajrayogini-sankhu-temple/
-- Nagi Gumba: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/nagi-gumba-shivapuri-hike/
-- Bungamati: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/bungamati-newari-village-woodcarving/
-- Naropa and Tilopa cave traditions: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/naropa-tilopa-caves-pashupatinath/
-- Panauti: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/panauti-three-rivers-heritage-town/
-- Changu Narayan: https://vridhi.ink/explore/kathmandu-beyond-the-postcards/changu-narayan-oldest-inscription/
-
-Commercial integrity: the collection currently contains no active affiliate tracking or confirmed paid partners. Partnership enquiries are invited for local accommodation, guides, heritage walks, crafts and responsible experiences. Any paid placement must be labelled; sponsorship does not guarantee editorial coverage or a positive review. Do not imply live opening status, booking availability, first-hand inspection or endorsement.
-
-## Featured original research
-
-- Thiruparankundram: 2,000 Years on One Hill: https://vridhi.ink/originals/history/thiruparankundram-history-timeline/ — a sourced visual timeline of the hill's Jain-associated ascetic remains, ancient Tamil literary references to Murugan, Pandya-period inscriptions, the Sikkandar Badusha Dargah traditions, property litigation and the Deepathoon dispute. Distinguishes archaeological evidence, literary tradition, documented dates and contested claims.
