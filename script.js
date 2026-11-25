@@ -321,3 +321,125 @@ async function loadVridhiBreakingTicker() {
   }
 }
 loadVridhiBreakingTicker();
+
+
+/* VRIDHI_GA4_COMPREHENSIVE_TRACKING_V1 */
+(function installVridhiAnalytics() {
+  const measurementId = 'G-KP51276K9G';
+
+  // Some older pages already load gtag in their HTML; initialise it only where absent.
+  if (typeof window.gtag !== 'function') {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, { send_page_view: true });
+  }
+  if (!document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+  }
+
+  const send = (name, params) => {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, Object.assign({
+      page_path: window.location.pathname
+    }, params || {}));
+  };
+
+  // Scroll depth: one event per threshold per page view.
+  const depthsSent = new Set();
+  const thresholds = [25, 50, 75, 90];
+  const measureScroll = () => {
+    const root = document.documentElement;
+    const total = Math.max(root.scrollHeight, document.body ? document.body.scrollHeight : 0) - window.innerHeight;
+    if (total <= 0) return;
+    const percent = Math.min(100, Math.round((window.scrollY / total) * 100));
+    thresholds.forEach(depth => {
+      if (percent >= depth && !depthsSent.has(depth)) {
+        depthsSent.add(depth);
+        send('content_scroll', { percent_scrolled: depth });
+      }
+    });
+  };
+  window.addEventListener('scroll', measureScroll, { passive: true });
+  window.addEventListener('load', measureScroll);
+
+  // Mark meaningful reading time without recording text or personal information.
+  const path = window.location.pathname;
+  const isEditorialPage = /^\/(journal|originals|discover|earth|explore)\//.test(path)
+    && !/\/(index\.html)?$/.test(path);
+  if (isEditorialPage) {
+    [30, 60].forEach(seconds => {
+      window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          send('article_engagement', { engagement_seconds: seconds });
+        }
+      }, seconds * 1000);
+    });
+  }
+
+  // Track search and filter use without transmitting the words a reader types.
+  document.addEventListener('submit', event => {
+    const form = event.target;
+    if (!(form instanceof HTMLFormElement)) return;
+    const searchInput = form.querySelector('input[type="search"], input[name="q"], input[name="query"], .filter-search');
+    if (searchInput) {
+      send('site_search', { search_method: searchInput.type === 'search' ? 'search_input' : 'site_filter' });
+      return;
+    }
+    const formLabel = ((form.id || '') + ' ' + (form.className || '')).toLowerCase();
+    if (/newsletter|subscribe|contact|lead/.test(formLabel)) {
+      send('generate_lead', { form_id: String(form.id || 'unlabelled').slice(0, 60) });
+    } else {
+      send('form_submit', { form_id: String(form.id || 'unlabelled').slice(0, 60) });
+    }
+  }, true);
+
+  document.addEventListener('change', event => {
+    const target = event.target;
+    if (target && (target.matches('.filter-category, .filter-search, [data-search-filter]'))) {
+      send('content_filter_used', { filter_type: target.matches('.filter-category') ? 'category' : 'text' });
+    }
+  }, true);
+
+  // Delegated click tracking covers dynamically generated cards and controls too.
+  document.addEventListener('click', event => {
+    const target = event.target && event.target.closest
+      ? event.target.closest('a, button, [role="button"]')
+      : null;
+    if (!target || target.hasAttribute('data-no-analytics') || target.disabled) return;
+
+    if (target.hasAttribute('data-follow-topic')) {
+      send('topic_follow', { topic: String(target.dataset.followTopic || 'unknown').slice(0, 60) });
+    }
+    if (target.matches('[data-answer], [data-home-answer], .quiz-choice, .answer-option')) {
+      send('quiz_answer', { quiz_type: target.closest('.interactive-quiz') ? 'interactive' : 'homepage' });
+    }
+    if (target.matches('[data-target], .slide-prev, .slide-next, .paper-slider-prev, .paper-slider-next')) {
+      send('carousel_interaction');
+    }
+
+    if (target.tagName === 'A') {
+      const href = target.getAttribute('href') || '';
+      if (/^(mailto:|tel:)/i.test(href)) {
+        send('contact_click', { contact_method: href.toLowerCase().startsWith('mailto:') ? 'email' : 'phone' });
+        return;
+      }
+      let url;
+      try { url = new URL(href, window.location.href); } catch (_) { return; }
+      if (/\.(pdf|docx?|xlsx?|pptx?|csv|zip)$/i.test(url.pathname)) {
+        send('file_download', { file_extension: url.pathname.split('.').pop().toLowerCase() });
+      }
+      if (url.hostname && url.hostname !== window.location.hostname) {
+        send('outbound_click', { link_domain: url.hostname });
+      } else if (url.pathname !== window.location.pathname || url.hash) {
+        const area = target.closest('nav') ? 'navigation'
+          : target.closest('footer') ? 'footer'
+          : target.closest('main') ? 'content' : 'other';
+        send('internal_link_click', { link_path: url.pathname, link_area: area });
+      }
+    }
+  }, true);
+})();
