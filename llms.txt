@@ -58,3 +58,7 @@ https://vridhi.ink/sitemap.xml
 ## Current implementation note
 
 Vridhi is an evolving static website. A page's presence in this guide does not imply that a complete article library, live data feed, automated publishing system or all planned features are already operational.
+
+## Featured original research
+
+- Thiruparankundram: 2,000 Years on One Hill: https://vridhi.ink/originals/history/thiruparankundram-history-timeline/ — a sourced visual timeline of the hill's Jain-associated ascetic remains, Tamil literary references to Murugan, Pandya-period inscriptions, Sikkandar Badusha Dargah traditions, property litigation and the Deepathoon dispute. Distinguishes archaeological evidence, literary tradition, documented dates and contested claims.
