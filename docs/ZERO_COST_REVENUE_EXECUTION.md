@@ -6,7 +6,7 @@
 Build a useful, trusted publication and intelligence service that earns revenue. The long-term ambition is 10,000 daily active users, but this is a target, not a forecast or guarantee. Track daily active users separately from pageviews, reach, and monthly users.
 
 ## Strategic pilot
-Start with Udaipur environmental intelligence. Cover:
+Build Vridhi Earth as India-wide environmental intelligence, using Udaipur as the first practical field pilot—not the limit of coverage. Expand to other Indian cities, districts and national issues as evidence and capacity allow. Cover:
 - Lakes and water quality
 - Sewage, drainage, and urban infrastructure
 - Waste, landfill fires, and collection
