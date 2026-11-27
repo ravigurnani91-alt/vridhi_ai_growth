@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T11:27:05.303200+00:00",
+  "updated": "2026-11-27T11:27:28.367117+00:00",
   "editorial_note": "Publisher headlines and short excerpts. Open the source link for the full report.",
   "items": [
     {
@@ -163,6 +163,22 @@
       "summary": "Almost one million customers in the US had no power on Thursday evening as storms descended on both US coasts, bringing wind gusts, heavy rain and flooding."
     },
     {
+      "title": "APOD: 2026 November 27 – The Moon Watchers",
+      "url": "https://science.nasa.gov/image-article/apod-2026-november-27-the-moon-watchers/",
+      "source": "NASA",
+      "category": "SCIENCE & SPACE",
+      "published": "2026-11-27T05:05:00+00:00",
+      "summary": "APOD Science APOD APOD: 2026 November 27 –… Today’s APOD Archive Submissions Index Search Calendar RSS Education About Discuss APOD Astronomy Picture of the Day Discover the cosmos! Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. The Moon Watchers […]"
+    },
+    {
+      "title": "Shivelyuch Socked In",
+      "url": "https://science.nasa.gov/earth/earth-observatory/shivelyuch-socked-in/",
+      "source": "NASA",
+      "category": "SCIENCE & SPACE",
+      "published": "2026-11-27T05:01:00+00:00",
+      "summary": "A cloud layer encircled the flanks of the volcano on the Kamchatka Peninsula but left its restless summit caldera in view."
+    },
+    {
       "title": "Laxman Utekar, Rajkumar Periasamy and Vishnuvardhan Set New Films With Bhushan Kumar’s T-Series (EXCLUSIVE)",
       "url": "https://variety.com/2026/film/news/laxman-utekar-rajkumar-periasamy-vishnuvardhan-films-tseries-1236958689/",
       "source": "Variety",
@@ -305,25 +321,7 @@
       "category": "ENTERTAINMENT",
       "published": "2026-11-26T12:02:58+00:00",
       "summary": "Lord Mann says he has launched the investigation after \"growing discomfort among Jewish BBC staff\"."
-    },
-    {
-      "title": "Veruschka: Striking images of one of the first supermodels, who has died aged 87",
-      "url": "https://www.bbc.co.uk/news/articles/cmn50ezxdnewo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Entertainment & Arts",
-      "category": "ENTERTAINMENT",
-      "published": "2026-11-26T10:32:20+00:00",
-      "summary": "Veruschka was a model and artist who became one of one of the first global fashion stars in the 1960s."
-    },
-    {
-      "title": "Musk's plan to send a million SpaceX data satellites into space approved",
-      "url": "https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC Technology",
-      "category": "TECH & AI",
-      "published": "2026-11-26T09:27:44+00:00",
-      "summary": "The Starmind constellation aims to be the most cost and energy-efficient way to meet the growing demand for AI computing power."
     }
   ],
-  "source_errors": [
-    "NASA: HTTPError: HTTP Error 429: Too Many Requests"
-  ]
+  "source_errors": []
 }
