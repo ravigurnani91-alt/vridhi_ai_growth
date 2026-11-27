@@ -121,7 +121,9 @@ jobs:
                 '- HTTP: ' + v.httpStatus,
                 '- Latest stories: ' + v.latestStoriesCount,
                 '- Images: ' + (v.totalImages - v.brokenImages.length) + '/' + v.totalImages + ' loaded',
-                '- Duplicate front-page headlines: ' + v.duplicateFrontTitles.length,\n                '- Broken images: ' + v.brokenImages.length,\n                '- Missing featured visuals: ' + v.fallbackVisuals.length,
+                '- Duplicate front-page headlines: ' + v.duplicateFrontTitles.length,
+                '- Broken images: ' + v.brokenImages.length,
+                '- Missing featured visuals: ' + v.fallbackVisuals.length,
                 '- Loading placeholders: ' + v.placeholderText.length,
                 '- First latest stories: ' + v.latestStories.slice(0, 5).join(' | ')
               ]),
