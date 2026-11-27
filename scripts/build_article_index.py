@@ -105,7 +105,7 @@ def main():
             title = article.get("headline") or parser.meta.get("og:title")
             if not title:
                 title = re.sub(r"\s*\|\s*Vridhi$", "", page.read_text(encoding="utf-8", errors="replace").split("<title>",1)[-1].split("</title>",1)[0]) if "<title>" in page.read_text(encoding="utf-8", errors="replace") else ""
-                title = re.sub(r"\s*\|\s*Vridhi$", "", page.read_text(encoding="utf-8", errors="replace").split("<title>",1)[-1].split("</title>",1)[0]) if "<title>" in page.read_text(encoding="utf-8", errors="replace") else ""
+            title = re.sub(r"\s*\|\s*Vridhi$", "", str(title)).strip()
             description = article.get("description") or parser.meta.get("og:description") or parser.meta.get("description")
             published = article.get("datePublished")
             if not title or not published:
