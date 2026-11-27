@@ -757,3 +757,20 @@ loadVridhiBreakingTicker();
       grid.textContent = 'Stories are temporarily unavailable. Please try again shortly.';
     });
 })();
+
+// Vridhi WhatsApp Channel: make the official follow link available site-wide.
+(() => {
+  const channelUrl = "https://whatsapp.com/channel/0029VbED4KY7NoZtQS47vG2D";
+  const footer = document.querySelector(".paper-footer");
+  if (footer && !footer.querySelector('[data-vridhi-whatsapp]')) {
+    const link = document.createElement("a");
+    link.href = channelUrl;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = "Follow Vridhi on WhatsApp";
+    link.setAttribute("data-vridhi-whatsapp", "true");
+    const links = footer.querySelector("div");
+    if (links) links.appendChild(link);
+    else footer.appendChild(link);
+  }
+})();
