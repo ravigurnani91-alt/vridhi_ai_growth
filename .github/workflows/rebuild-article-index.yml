@@ -10,6 +10,7 @@ on:
       - 'discover/**/index.html'
       - 'earth/**/index.html'
       - 'scripts/build_article_index.py'
+      - 'script.js'
       - '.github/workflows/rebuild-article-index.yml'
   workflow_dispatch:
 
