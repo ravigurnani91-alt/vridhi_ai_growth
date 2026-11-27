@@ -564,13 +564,7 @@ loadVridhiBreakingTicker();
 (function () {
   const grid = document.getElementById('live-article-grid');
   if (!grid) return;
-  const frontPagePaths = new Set([
-    '/journal/vaibhav-sooryavanshi-204-record-innings/',
-    '/journal/india-groundwater-rajasthan-2025/',
-    '/journal/dholavira-water-city/',
-    '/originals/aravalli-definition-deadline-2026/',
-    '/originals/history/thiruparankundram-history-timeline/'
-  ]);
+  let frontPagePaths = new Set();
   const filters = [...document.querySelectorAll('[data-article-filter]')];
   const search = document.getElementById('article-feed-search');
   const topicsNode = document.getElementById('article-feed-topics');
@@ -725,6 +719,9 @@ loadVridhiBreakingTicker();
     .then(response => { if (!response.ok) throw new Error('Article index unavailable'); return response.json(); })
     .then(data => {
       const source = Array.isArray(data.articles) ? data.articles : [];
+      frontPagePaths = new Set(source.slice().sort((a,b) =>
+        (Date.parse(b.published || '') || 0) - (Date.parse(a.published || '') || 0)
+      ).slice(0,5).map(article => safeInternalPath(article.url)).filter(Boolean));
       const seenPaths = new Set();
       const seenTitles = new Set();
       allArticles = source.map((article, index) => {
