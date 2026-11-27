@@ -493,14 +493,6 @@ loadVridhiBreakingTicker();
     try { const u = new URL(value); return u.protocol === 'https:' ? u.href : ''; }
     catch (_) { return ''; }
   };
-  const editorialOrder = [
-    '/journal/vaibhav-sooryavanshi-204-record-innings/',
-    '/discover/intimacy/the-last-table/',
-    '/journal/india-groundwater-rajasthan-2025/',
-    '/journal/dholavira-water-city/',
-    '/originals/aravalli-definition-deadline-2026/',
-    '/originals/history/thiruparankundram-history-timeline/'
-  ];
   const artClass = section => section === 'Earth' ? 'earth-art' : section === 'Originals' ? 'originals-art' : 'discover-art';
   function card(article, kind) {
     const el = document.createElement('article');
@@ -510,7 +502,16 @@ loadVridhiBreakingTicker();
     link.href = article.path;
     if (article.image) {
       const img = document.createElement('img');
-      img.src = article.image; img.alt = ''; img.loading = 'lazy';
+      img.src = article.image; img.alt = article.title; img.loading = 'lazy';
+      img.addEventListener('error', () => {
+        img.remove();
+        link.classList.remove('has-image');
+        link.classList.add(artClass(article.section));
+        const mark = document.createElement('span');
+        mark.className = 'front-visual-mark';
+        mark.textContent = article.section === 'Earth' ? 'E' : article.section === 'Originals' ? 'V' : 'D';
+        link.appendChild(mark);
+      }, { once: true });
       link.appendChild(img);
     } else {
       const mark = document.createElement('span');
@@ -536,12 +537,11 @@ loadVridhiBreakingTicker();
       ...a,path:safePath(a.url),image:safeImage(a.image),section:['Earth','Discover','Originals'].includes(a.section)?a.section:'Discover',
       topic:clean(a.topic)||'Research',title:clean(a.title),description:clean(a.description),_i:i
     })).filter(a=>a.path&&a.title&&!seen.has(a.path)&&seen.add(a.path));
-    const byPath=new Map(all.map(a=>[a.path,a]));
-    const featured=editorialOrder.map(p=>byPath.get(p)).filter(Boolean);
-    const used=new Set(featured.map(a=>a.path));
-    const recent=all.filter(a=>!used.has(a.path)).sort((a,b)=>(Date.parse(b.published||'')||0)-(Date.parse(a.published||'')||0)||a._i-b._i);
-    const lead=featured[0]||recent.shift();
-    const side=[...featured.slice(1),...recent].filter(a=>a&&a.path!==lead?.path).slice(0,4);
+    const recent=all.slice().sort((a,b)=>(Date.parse(b.published||'')||0)-(Date.parse(a.published||'')||0)||a._i-b._i);
+    const featured=recent.slice(0,5);
+    const lead=featured[0];
+    const side=featured.slice(1,5);
+    const more=recent.slice(5);
     if(!lead){root.textContent='New stories are on their way.';return;}
     root.replaceChildren();
     const leadCard=card(lead,'lead');
@@ -550,7 +550,7 @@ loadVridhiBreakingTicker();
     const rail=document.createElement('aside');rail.className='front-latest-rail';
     const railHead=document.createElement('h2');railHead.textContent='MORE TO EXPLORE';
     rail.appendChild(railHead);
-    [...featured.slice(0,0),...recent].slice(0,6).forEach(a=>{
+    more.slice(0,6).forEach(a=>{
       const item=document.createElement('a');item.href=a.path;item.className='front-rail-item';
       const label=document.createElement('small');label.textContent=a.section+' · '+a.topic;
       const title=document.createElement('span');title.textContent=a.title;
