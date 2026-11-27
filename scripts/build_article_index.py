@@ -104,8 +104,8 @@ def main():
             url = canonical_path or rel
             title = article.get("headline") or parser.meta.get("og:title")
             if not title:
-                title = re.sub(r"\\s*\\|\\s*Vridhi$", "", page.read_text(encoding="utf-8", errors="replace").split("<title>",1)[-1].split("</title>",1)[0]) if "<title>" in page.read_text(encoding="utf-8", errors="replace") else ""
-            title = re.sub(r"\\s*\\|\\s*Vridhi$", "", str(title)).strip()
+                title = re.sub(r"\s*\|\s*Vridhi$", "", page.read_text(encoding="utf-8", errors="replace").split("<title>",1)[-1].split("</title>",1)[0]) if "<title>" in page.read_text(encoding="utf-8", errors="replace") else ""
+                title = re.sub(r"\s*\|\s*Vridhi$", "", page.read_text(encoding="utf-8", errors="replace").split("<title>",1)[-1].split("</title>",1)[0]) if "<title>" in page.read_text(encoding="utf-8", errors="replace") else ""
             description = article.get("description") or parser.meta.get("og:description") or parser.meta.get("description")
             published = article.get("datePublished")
             if not title or not published:
@@ -134,7 +134,7 @@ def main():
 
     articles = sorted(merged.values(), key=lambda item: (item.get("published", ""), item.get("modified", "")), reverse=True)
     payload = {"version": 3, "updated": date.today().isoformat(), "articles": articles}
-    INDEX.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    INDEX.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Indexed {len(articles)} Vridhi stories.")
 
 if __name__ == "__main__":
