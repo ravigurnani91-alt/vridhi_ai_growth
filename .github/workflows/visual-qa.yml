@@ -1,0 +1,146 @@
+name: Vridhi Visual QA and Screenshots
+
+on:
+  push:
+    branches:
+      - foundation/vridhi-umbrella
+    paths:
+      - 'index.html'
+      - 'script.js'
+      - 'styles.css'
+      - 'articles.json'
+      - 'journal/**'
+      - 'originals/**'
+      - 'discover/**'
+      - 'earth/**'
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: vridhi-visual-qa
+  cancel-in-progress: true
+
+jobs:
+  visual-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out website source
+        uses: actions/checkout@v4
+        with:
+          ref: foundation/vridhi-umbrella
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+
+      - name: Wait for GitHub Pages deployment
+        run: |
+          for i in {1..18}; do
+            code=$(curl -L -s -o /dev/null -w "%{http_code}" https://vridhi.ink/)
+            echo "Homepage HTTP status: $code (attempt $i)"
+            if [ "$code" = "200" ]; then
+              sleep 75
+              exit 0
+            fi
+            sleep 20
+          done
+          echo "Homepage did not return HTTP 200"
+          exit 1
+
+      - name: Capture desktop and mobile screenshots and inspect page
+        run: |
+          mkdir -p qa-output
+          cat > qa-visual-check.cjs <<'EOF'
+          const { chromium } = require('playwright');
+          const fs = require('fs');
+
+          (async () => {
+            const browser = await chromium.launch({ headless: true });
+            const results = { url: 'https://vridhi.ink/', checkedAt: new Date().toISOString(), viewports: {}, consoleErrors: [], pageErrors: [], failedRequests: [] };
+            for (const [name, viewport] of Object.entries({
+              mobile: { width: 390, height: 844, deviceScaleFactor: 1, isMobile: true },
+              desktop: { width: 1440, height: 1000, deviceScaleFactor: 1, isMobile: false }
+            })) {
+              const page = await browser.newPage({ viewport, deviceScaleFactor: viewport.deviceScaleFactor, isMobile: viewport.isMobile });
+              page.on('console', msg => { if (msg.type() === 'error') results.consoleErrors.push({ viewport: name, message: msg.text() }); });
+              page.on('pageerror', error => results.pageErrors.push({ viewport: name, message: error.message }));
+              page.on('requestfailed', request => results.failedRequests.push({ viewport: name, url: request.url(), error: request.failure()?.errorText }));
+              const response = await page.goto('https://vridhi.ink/?visual-qa=' + Date.now(), { waitUntil: 'networkidle', timeout: 90000 });
+              await page.waitForTimeout(5000);
+              await page.screenshot({ path: 'qa-output/' + name + '-homepage.png', fullPage: true, animations: 'disabled' });
+              const snapshot = await page.evaluate(() => {
+                const text = el => (el?.innerText || '').trim();
+                const imgs = [...document.images].map(img => ({ src: img.currentSrc || img.src, alt: img.alt, loaded: img.complete && img.naturalWidth > 0 }));
+                const cards = [...document.querySelectorAll('#front-page-grid a, #live-article-grid a')];
+                const titles = cards.map(card => text(card.querySelector('h1,h2,h3,h4,.article-title')) || text(card)).filter(Boolean);
+                const latest = [...document.querySelectorAll('#live-article-grid a')].map(text);
+                return {
+                  title: document.title,
+                  httpStatus: null,
+                  headlineTicker: text(document.querySelector('#homepage-headline-strip')),
+                  leadSection: text(document.querySelector('#front-page-grid')),
+                  latestStoriesCount: document.querySelectorAll('#live-article-grid a').length,
+                  latestStories: latest.slice(0, 12),
+                  duplicateCardTitles: titles.filter((title, index) => titles.indexOf(title) !== index),
+                  brokenImages: imgs.filter(img => !img.loaded),
+                  totalImages: imgs.length,
+                  placeholderText: [...document.querySelectorAll('body *')].filter(el => el.children.length === 0 && /loading the latest|curating today|latest headlines…/i.test(text(el))).map(text).slice(0, 10)
+                };
+              });
+              snapshot.httpStatus = response?.status() ?? null;
+              results.viewports[name] = snapshot;
+              await page.close();
+            }
+            await browser.close();
+            const all = Object.values(results.viewports);
+            results.passed = all.every(v => v.httpStatus === 200 && v.latestStoriesCount > 0 && v.placeholderText.length === 0);
+            fs.writeFileSync('qa-output/visual-qa-report.json', JSON.stringify(results, null, 2));
+            const summary = [
+              '# Vridhi visual QA',
+              '',
+              '- Checked: ' + results.checkedAt,
+              '- Result: ' + (results.passed ? 'PASS' : 'NEEDS ATTENTION'),
+              ...Object.entries(results.viewports).flatMap(([name, v]) => [
+                '',
+                '## ' + name,
+                '- HTTP: ' + v.httpStatus,
+                '- Latest stories: ' + v.latestStoriesCount,
+                '- Images: ' + (v.totalImages - v.brokenImages.length) + '/' + v.totalImages + ' loaded',
+                '- Duplicate cards: ' + v.duplicateCardTitles.length,
+                '- Loading placeholders: ' + v.placeholderText.length,
+                '- First latest stories: ' + v.latestStories.slice(0, 5).join(' | ')
+              ]),
+              '',
+              '## Browser errors',
+              '- Console errors: ' + results.consoleErrors.length,
+              '- Page errors: ' + results.pageErrors.length,
+              '- Failed requests: ' + results.failedRequests.length
+            ].join('\n');
+            fs.writeFileSync('qa-output/visual-qa-report.md', summary);
+            fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
+            console.log(summary);
+            // Broken images and duplicate titles are reported for review, not treated as a deployment failure.
+            if (!results.passed) process.exitCode = 1;
+          })().catch(error => { console.error(error); process.exit(1); });
+          EOF
+          node qa-visual-check.cjs
+
+      - name: Upload screenshots and QA report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: vridhi-visual-qa-${{ github.run_number }}
+          path: qa-output/
+          retention-days: 30
+          if-no-files-found: warn
