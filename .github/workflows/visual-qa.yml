@@ -82,18 +82,22 @@ jobs:
               const snapshot = await page.evaluate(() => {
                 const text = el => (el?.innerText || '').trim();
                 const imgs = [...document.images].map(img => ({ src: img.currentSrc || img.src, alt: img.alt, loaded: img.complete && img.naturalWidth > 0 }));
-                const cards = [...document.querySelectorAll('#front-page-grid a, #live-article-grid a')];
-                const titles = cards.map(card => text(card.querySelector('h1,h2,h3,h4,.article-title')) || text(card)).filter(Boolean);
-                const latest = [...document.querySelectorAll('#live-article-grid a')].map(text);
+                const frontTitles = [...document.querySelectorAll('#front-page-grid .front-story-title, #front-page-grid .front-rail-item span')].map(text).filter(Boolean);
+                const feedTitles = [...document.querySelectorAll('#live-article-grid h3 a')].map(text).filter(Boolean);
+                const duplicateFrontTitles = frontTitles.filter((title, index) => frontTitles.indexOf(title) !== index);
+                const brokenImages = imgs.filter(img => !img.loaded);
+                const fallbackVisuals = [...document.querySelectorAll('#front-page-grid .front-visual-mark')].map(el => text(el));
+                const latest = feedTitles;
                 return {
                   title: document.title,
                   httpStatus: null,
                   headlineTicker: text(document.querySelector('#homepage-headline-strip')),
                   leadSection: text(document.querySelector('#front-page-grid')),
-                  latestStoriesCount: document.querySelectorAll('#live-article-grid a').length,
+                  latestStoriesCount: feedTitles.length,
                   latestStories: latest.slice(0, 12),
-                  duplicateCardTitles: titles.filter((title, index) => titles.indexOf(title) !== index),
-                  brokenImages: imgs.filter(img => !img.loaded),
+                  duplicateFrontTitles,
+                  brokenImages,
+                  fallbackVisuals,
                   totalImages: imgs.length,
                   placeholderText: [...document.querySelectorAll('body *')].filter(el => el.children.length === 0 && /loading the latest|curating today|latest headlines…/i.test(text(el))).map(text).slice(0, 10)
                 };
@@ -104,7 +108,7 @@ jobs:
             }
             await browser.close();
             const all = Object.values(results.viewports);
-            results.passed = all.every(v => v.httpStatus === 200 && v.latestStoriesCount > 0 && v.placeholderText.length === 0);
+            results.passed = all.every(v => v.httpStatus === 200 && v.latestStoriesCount > 0 && v.placeholderText.length === 0 && v.duplicateFrontTitles.length === 0 && v.brokenImages.length === 0 && v.fallbackVisuals.length === 0);
             fs.writeFileSync('qa-output/visual-qa-report.json', JSON.stringify(results, null, 2));
             const summary = [
               '# Vridhi visual QA',
@@ -117,7 +121,7 @@ jobs:
                 '- HTTP: ' + v.httpStatus,
                 '- Latest stories: ' + v.latestStoriesCount,
                 '- Images: ' + (v.totalImages - v.brokenImages.length) + '/' + v.totalImages + ' loaded',
-                '- Duplicate cards: ' + v.duplicateCardTitles.length,
+                '- Duplicate front-page headlines: ' + v.duplicateFrontTitles.length,\n                '- Broken images: ' + v.brokenImages.length,\n                '- Missing featured visuals: ' + v.fallbackVisuals.length,
                 '- Loading placeholders: ' + v.placeholderText.length,
                 '- First latest stories: ' + v.latestStories.slice(0, 5).join(' | ')
               ]),
@@ -130,7 +134,7 @@ jobs:
             fs.writeFileSync('qa-output/visual-qa-report.md', summary);
             fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
             console.log(summary);
-            // Broken images and duplicate titles are reported for review, not treated as a deployment failure.
+            // Fail the QA check when the live design has broken/missing imagery or duplicate front-page headlines.
             if (!results.passed) process.exitCode = 1;
           })().catch(error => { console.error(error); process.exit(1); });
           EOF
