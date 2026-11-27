@@ -87,7 +87,9 @@ def infer_section(item, path):
         str(item.get("title", "")), str(item.get("topic", "")),
         str(item.get("articleSection", "")), str(path)
     ]).lower()
-    if "india & world briefs" in text or "india and world briefs" in text:\n        return "India & World Briefs"\n    if "/originals/" in "/" + str(path) or "original investigation" in text or "vridhi original" in text:
+    if "india & world briefs" in text or "india and world briefs" in text:
+        return "India & World Briefs"
+    if "/originals/" in "/" + str(path) or "original investigation" in text or "vridhi original" in text:
         return "Originals"
     # Historical/archaeological subjects take precedence over words such as water
     # that may appear in the title of a history feature (e.g. Dholavira).
