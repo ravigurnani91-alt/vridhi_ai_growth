@@ -1,3 +1,11 @@
+// Vridhi brand mark: use the same browser-tab icon across every page.
+if (!document.querySelector('link[rel~="icon"]')) {
+  const vridhiFavicon = document.createElement('link');
+  vridhiFavicon.rel = 'icon';
+  vridhiFavicon.type = 'image/svg+xml';
+  vridhiFavicon.href = '/favicon.svg?v=1';
+  document.head.appendChild(vridhiFavicon);
+}
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 if (menuButton && nav) {
