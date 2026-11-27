@@ -1,7 +1,17 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-11-27",
   "articles": [
+    {
+      "title": "COP31 Ended Without Its Main Climate Deal. What Did Countries Still Agree On?",
+      "description": "COP31 closed in Antalya without consensus on its overarching cover decision. Separate decisions still advanced work on just transition, adaptation, climate finance and transparency.",
+      "image": "",
+      "published": "2026-11-27",
+      "modified": "2026-11-27",
+      "url": "journal/cop31-ends-without-overarching-climate-deal/",
+      "section": "Discover",
+      "topic": "COP31"
+    },
     {
       "title": "Thiruparankundram: 2,000 Years on One Hill",
       "description": "A visual historical timeline of the layered Jain, Hindu and Islamic heritage of Thiruparankundram, Madurai, including archaeological evidence, literature, inscriptions, legal records and the Deepathoon dispute.",
